@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7794117286385992600}
   - component: {fileID: 2838385939054642032}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GB-LandTileset_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
