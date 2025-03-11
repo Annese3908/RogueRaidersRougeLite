@@ -24,6 +24,6 @@ public static class Level
 public class Room
 {
 public int RoomNumber = 0;
-public vector2 Location;
+public Vector2 Location;
 public Sprite RoomImage;
 }

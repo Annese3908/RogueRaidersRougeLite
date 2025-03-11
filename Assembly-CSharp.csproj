@@ -64,12 +64,15 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.57f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Map Generation/ChunkTrigger.cs" />
     <Compile Include="Assets/Scripts/Map Generation/GenerateMap.cs" />
     <Compile Include="Assets/Scripts/Player/CameraMovement.cs" />
-    <Compile Include="Assets/Scripts/ChunkTrigger.cs" />
-    <Compile Include="Assets/Scripts/MapController.cs" />
+    <Compile Include="Assets/Scripts/Weapons/WeaponController.cs" />
+    <Compile Include="Assets/Scripts/Weapons/DaggerController.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerAnimator.cs" />
+    <Compile Include="Assets/Scripts/Map Generation/PropsRandomizer.cs" />
+    <Compile Include="Assets/Scripts/Map Generation/MapController.cs" />
     <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
-    <Compile Include="Assets/Scripts/PropsRandomizer.cs" />
     <Compile Include="Assets/Scripts/Map Generation/Level.cs" />
   </ItemGroup>
   <ItemGroup>
