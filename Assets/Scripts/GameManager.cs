@@ -8,7 +8,7 @@ public class SceneController : MonoBehaviour
     // public variables
     int playerLives = 5;
     int enemyWaves = 5;
-    bool playerAlive = true
+    bool playerAlive = true;
 
     // Start is called before the first frame update
     void Start()
