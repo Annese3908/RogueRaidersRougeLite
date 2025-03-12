@@ -15,7 +15,7 @@ public class SeedInventory : MonoBehaviour
         }
     }
 
-    public void AdvanceSeeds(int packet)
+    public void AdvancePacket(int packet)
     {
         packets[packet].state++;
 
@@ -30,7 +30,7 @@ public class SeedInventory : MonoBehaviour
         {
             packets[packet].type = type;
 
-            AdvanceSeeds(packet);
+            AdvancePacket(packet);
         }
     }
 
