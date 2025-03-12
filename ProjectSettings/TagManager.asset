@@ -3,14 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
+  - Props
   - Terrain
   - 
   - 
@@ -36,8 +38,16 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
+  - name: Terrain
+    uniqueID: 3429576035
+    locked: 0
+  - name: Farm
+    uniqueID: 3599728877
+    locked: 0
+  - name: Props
+    uniqueID: 2977950081
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
