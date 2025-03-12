@@ -19,7 +19,7 @@ public class RoomManager : MonoBehaviour
             roomCollider.enabled = true;
 
             //start spawning enemies
-            for (var spawner in enemySpawners)
+            foreach (var spawner in enemySpawners)
             {
                 spawner.StartSpawning();
             }
