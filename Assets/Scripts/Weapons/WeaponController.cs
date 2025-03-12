@@ -5,27 +5,25 @@ using UnityEngine;
 public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    public GameObject prefab;
-    public float damage;
-    public float speed;
-    public float cooldownDuration;
+    public Weapons weaponData;
     float currCooldown;
-    public int pierce;
+    protected PlayerMovement pm;
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        currCooldown = cooldownDuration;
+        pm = FindObjectOfType<PlayerMovement>();
+        currCooldown = weaponData.CooldownDuration;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         currCooldown -= Time.deltaTime;
         if (currCooldown <= 0f){
             Attack();
         }
     }
-    void Attack(){
-        currCooldown = cooldownDuration;
+    protected virtual void Attack(){
+        currCooldown = weaponData.CooldownDuration;
     }
 }

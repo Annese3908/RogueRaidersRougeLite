@@ -12,10 +12,13 @@ public class PlayerMovement : MonoBehaviour
     public float lastX;
     [HideInInspector]    
     public float lastY;
+    [HideInInspector]
+    public Vector2 lastMovedVector;
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        lastMovedVector = new Vector2(1, 0f); //default to right movement
     }
 
     // Update is called once per frame
@@ -28,18 +31,25 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void InputManagement(){
-        float deltaX = Input.GetAxis("Horizontal") * moveSpeed;
-        float deltaY = Input.GetAxis("Vertical") * moveSpeed;
-        moveDir = new Vector2(deltaX, deltaY);
+        float deltaX = Input.GetAxis("Horizontal");
+        float deltaY = Input.GetAxis("Vertical");
+        moveDir = new Vector2(deltaX, deltaY).normalized;
 
         if (moveDir.x != 0){
             lastX = moveDir.x;
+            lastMovedVector = new Vector2(lastX, 0f); //last x position vector
         }
         if (moveDir.y != 0){
              lastY = moveDir.y;
+             lastMovedVector = new Vector2(0f, lastY); // last y position vector
+        }
+        if(moveDir.x != 0 && moveDir.y != 0){
+            
+            lastMovedVector = new Vector2(lastX, lastY); // last combined position vector while moving
         }
     }
     private void Move(){
-        rigidBody.velocity = moveDir;
+
+        rigidBody.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
     }
 }
