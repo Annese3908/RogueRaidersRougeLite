@@ -2,36 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneController : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    // public variables
-    int playerLives = 5;
-    int enemyWaves = 5;
-    bool playerAlive = true;
+    public GameObject roomsParent;
+    public GameObject boss;
+    public GameObject youWinPopup;
+    public GameObject youLosePopup;
+    private GameObject[] rooms;
+    private int clearedRooms = 0;
+    private bool bossSpawned = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        boss.SetActive(false);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // loss condition
-    public void lose()
-    {
-        if (playerLives <= 0)
+        // Get all child objects of roomsParent and store them in the rooms array
+        int childCount = roomsParent.transform.childCount;
+        rooms = new GameObject[childCount];
+        for (int i = 0; i < childCount; i++)
         {
-            Application.Quit();
+            rooms[i] = roomsParent.transform.GetChild(i).gameObject;
         }
     }
 
-    public void win()
+    public void RoomCleared()
     {
+        clearedRooms++;
+        checkForBossSpawn();
+    }
 
+    public void PlayerEnteredSpawnRoom()
+    {
+        checkForBossSpawn();
+    }
+
+    void checkForBossSpawn()
+    {
+        if (clearedRooms >= 3 && !bossSpawned)
+        {
+            spawnBoss();
+        }
+    }
+
+    void spawnBoss()
+    {
+        boss.SetActive(true);
+        bossSpawned = true;
+    }
+
+    public void PlayerWin()
+    {
+        youWinPopup.SetActive(true);
+        // add more code to allow player to restart game or exit game
+    }
+
+    public void PlayerLose()
+    {
+        youLosePopup.SetActive(true);
+        // add more code to allow player to restart game or exit game
     }
 }
