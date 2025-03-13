@@ -40,17 +40,31 @@ public class Farm : MonoBehaviour
         {
             if (plots[i].interacted == true)
             {
+                plots[i].interacted = false;
+
                 switch(plots[i].state)
                 {
                     case PlotState.Empty:
+                        //find first availible seeds and plant them 
+                        int packet = seedPackets.FindPacket(PacketState.Full);
+                        seedPackets.AdvancePacket(packet);
+
+                        plots[i].PlantSeeds(seedPackets.GetSeeds(packet));
                         break;
+
                     case PlotState.Planted:
+                        //use water to grow plant
+                        player.SpendBucket();
+                        plots[i].WaterPlants();
                         break;
+
                     case PlotState.Grown:
+                        //give upgrade
                         break;
                 }
 
                 plots[i].interacted = false;
+                ReadyPlots();
             }
         }
     }

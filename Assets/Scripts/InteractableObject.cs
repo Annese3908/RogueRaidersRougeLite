@@ -4,7 +4,6 @@ using UnityEngine;
 
 abstract public class InteractableObject : MonoBehaviour, Interactable
 {
-    [SerializeField] protected Player player;
     protected bool isInteractable;
 
     public abstract void Interact();

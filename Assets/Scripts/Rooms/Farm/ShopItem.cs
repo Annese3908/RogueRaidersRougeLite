@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShopItem : InteractableObject
 {
     [SerializeField] protected SpriteRenderer waterSprite;
+    [SerializeField] protected Player player;
 
     protected virtual bool CanBeBought()
     {

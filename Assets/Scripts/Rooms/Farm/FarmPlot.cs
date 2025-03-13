@@ -18,6 +18,23 @@ public class FarmPlot : InteractableObject
 
     public SeedType seedType = SeedType.none;
 
+    public void PlantSeeds(SeedType seeds)
+    {
+        seedType = seeds;
+
+        state = PlotState.Planted;
+
+        plantSprite.enabled = true;
+        //change sprite to correct seed sprite
+    }
+
+    public void WaterPlants()
+    {
+        state = PlotState.Grown;
+
+        //change sprite to correct plant sprite
+    }
+
     public void SetPlotReadiness(bool ready)
     {
         //exit function if readiness is unchanged
