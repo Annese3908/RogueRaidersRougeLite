@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+ using System.Collections;
+ using System.Collections.Generic;
+ using UnityEngine;
 
-public class RoomManager : MonoBehaviour
-{
-    // create variables for collider and enemyspawner list
+ public class RoomManager : MonoBehaviour
+ {
+    public GameObject[] roomPrefab;
     public Collider roomCollider;
     public EnemySpawner[] enemySpawners;
+
 
     // create bool variable to see if room is locked, initially start as false
     private bool roomLocked = false;
@@ -41,3 +42,4 @@ public class RoomManager : MonoBehaviour
         gameManager.RoomCleared();
     }
 }
+

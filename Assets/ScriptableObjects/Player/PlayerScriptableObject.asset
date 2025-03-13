@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f47dff15523a7435697bff31d50c4672, type: 3}
-  m_Name: Aphid Enemy
+  m_Script: {fileID: 11500000, guid: 1722b318e47f54b77b41a527a6559b37, type: 3}
+  m_Name: PlayerScriptableObject
   m_EditorClassIdentifier: 
-  damage: 1
-  maxHealth: 15
-  moveSpeed: 2
+  maxHealth: 100
+  moveSpeed: 5
+  playerLives: 3

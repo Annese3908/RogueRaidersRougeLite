@@ -20,4 +20,7 @@ public class Weapons : ScriptableObject
     [SerializeField]
     int pierce;
     public int Pierce{get => pierce; private set => pierce = value;}
+    [SerializeField]
+    int projectileAmnt;
+    public int ProjectileAmnt{get => projectileAmnt; private set => projectileAmnt = value;}
 }
