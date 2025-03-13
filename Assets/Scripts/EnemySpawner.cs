@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemies = 3;        // Maximum number of enemies at a time
     public float spawnDelay = 2f;     // Delay between spawns
     public int totalWaves = 3;        // Total number of waves
+    public RoomManager roomManager;
 
     private int enemiesSpawned = 0;
     private int enemiesRemaining;
@@ -21,9 +22,9 @@ public class EnemySpawner : MonoBehaviour
         enemiesRemaining = enemiesPerWave;
     }
 
-    void OnTriggerEnter(Collider other)
+    public void StartSpawning()
     {
-        if (other.CompareTag("Player") && !isSpawning && wavesCount < totalWaves)
+        if (!isSpawning && wavesCount < totalWaves)
         {
             isSpawning = true;
             StartCoroutine(SpawnEnemies());
@@ -48,7 +49,10 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnDelay); // Delay between waves
         }
         // Unlock the room when all waves are finished
-        RoomManager.UnlockRoom();
+        if (roomManager != null)
+        {
+            roomManager.UnlockRoom();
+        }
     }
 
     void SpawnEnemy()

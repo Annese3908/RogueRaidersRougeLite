@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviour
     // create bool variable to see if room is locked, initially start as false
     private bool roomLocked = false;
 
-    void OnTriggerEntrer(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !roomLocked)
         {
