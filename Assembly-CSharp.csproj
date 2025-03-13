@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Rooms\Farm\HealItem.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\FarmPlot.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponController.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\Seeds.cs" />
