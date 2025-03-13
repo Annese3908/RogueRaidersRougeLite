@@ -18,7 +18,7 @@ public class Farm : MonoBehaviour
     public void ReadyPlots()
     {
         bool hasSeedsToPlant = seedPackets.FindPacket(PacketState.Full) > 0;
-        bool hasWaterToUse = player.FullBucketCount() > 0;
+        //bool hasWaterToUse = player.FullBucketCount() > 0;
 
         for (int i = 0; i < plots.Length; i++)
         {
@@ -28,7 +28,7 @@ public class Farm : MonoBehaviour
                     plots[i].SetPlotReadiness(hasSeedsToPlant);
                     break;
                 case PlotState.Planted:
-                    plots[i].SetPlotReadiness(hasWaterToUse);
+                    //plots[i].SetPlotReadiness(hasWaterToUse);
                     break;
             }
         }
@@ -54,7 +54,7 @@ public class Farm : MonoBehaviour
 
                     case PlotState.Planted:
                         //use water to grow plant
-                        player.SpendBucket();
+                        //player.SpendBucket();
                         plots[i].WaterPlants();
                         break;
 

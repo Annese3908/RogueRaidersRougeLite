@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AmmoItem : ShopItem
 {
+    /*
     protected override bool CanBeBought()
     {
         //cannot buy item if at full ammo
@@ -20,4 +21,5 @@ public class AmmoItem : ShopItem
         player.RefillAmmo();
         base.BuyItem();
     }
+    */
 }

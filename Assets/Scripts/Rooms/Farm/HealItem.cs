@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealItem : ShopItem
 {
+    /*
     protected override bool CanBeBought()
     {
         //cannot buy item if at full hp
@@ -20,4 +21,5 @@ public class HealItem : ShopItem
         player.FullHeal();
         base.BuyItem();
     }
+    */
 }
