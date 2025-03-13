@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        roomManager = GetComponent<RoomManager>();
         enemiesRemaining = enemiesPerWave;
     }
 
@@ -56,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy()
+        void SpawnEnemy()
     {
         if (enemiesRemaining <= 0) return;
 

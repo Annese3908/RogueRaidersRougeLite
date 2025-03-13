@@ -55,9 +55,9 @@
     <UnityVersion>2022.3.57f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="F:\Visual Studio 2022\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
-    <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
+    <Analyzer Include="/Users/camille-anneseeverage/.vscode/extensions/visualstudiotoolsforunity.vstuc-1.1.0/Analyzers/Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.57f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll" />
+    <Analyzer Include="/Applications/Unity/Hub/Editor/2022.3.57f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy\AntBehavior.cs" />
@@ -82,6 +82,34 @@
     <Compile Include="Assets\Scripts\Weapons\ProjectileBehavior.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
+    <Compile Include="Assets/Scripts/Enemy/AntBehavior.cs" />
+    <Compile Include="Assets/Scripts/Weapons/DaggerBehavior.cs" />
+    <Compile Include="Assets/Scripts/Weapons/Weapons.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyMovement.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/HealItem.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/FarmPlot.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyController.cs" />
+    <Compile Include="Assets/Scripts/Player/CameraMovement.cs" />
+    <Compile Include="Assets/Scripts/Weapons/WeaponController.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/Seeds.cs" />
+    <Compile Include="Assets/Scripts/Player/Interact.cs" />
+    <Compile Include="Assets/Scripts/EnemySpawner.cs" />
+    <Compile Include="Assets/Scripts/Enemy/GrubController.cs" />
+    <Compile Include="Assets/Scripts/RoomManager.cs" />
+    <Compile Include="Assets/Scripts/InteractableObject.cs" />
+    <Compile Include="Assets/Scripts/Enemy/Enemy.cs" />
+    <Compile Include="Assets/Scripts/Weapons/DaggerController.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerAnimator.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/Farm.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/AmmoItem.cs" />
+    <Compile Include="Assets/Scripts/Enemy/EnemyStats.cs" />
+    <Compile Include="Assets/Scripts/Interactable.cs" />
+    <Compile Include="Assets/Scripts/Weapons/ProjectileBehavior.cs" />
+    <Compile Include="Assets/Scripts/Rooms/Farm/ShopItem.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerMovement.cs" />
+    <Compile Include="Assets/Scripts/Player/Seed Inventory.cs" />
+    <Compile Include="Assets/Scripts/Player/PlayerStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
