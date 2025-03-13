@@ -5,16 +5,13 @@ using UnityEngine;
 public class FarmEntrance : MonoBehaviour
 {
     [SerializeField]
-    private FarmPlot[] plots;
+    private Farm farm;
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<Player>() != null)
         {
-            for (int i = 0; i < plots.Length; i++)
-            {
-                plots[i].CheckForSeedUpdate();
-            }
+            farm.ReadyPlots();
         }
     }
 }

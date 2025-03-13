@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\FarmEntrance.cs" />
+    <Compile Include="Assets\Scripts\Rooms\Farm\Farm.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\AmmoItem.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />

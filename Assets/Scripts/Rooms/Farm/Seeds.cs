@@ -13,8 +13,13 @@ namespace Seeds
         Empty,
         Full,
         Planted,
-        Grown,
         Harvested
+    }
+    public enum PlotState
+    {
+        Empty,
+        Planted,
+        Grown
     }
 
     public class SeedPacket
