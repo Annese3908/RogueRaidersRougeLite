@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed;
+    public Player playerData;
+    float currMoveSpeed;
     Rigidbody2D rigidBody;
     [HideInInspector]
     public Vector2 moveDir;
@@ -15,6 +16,10 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public Vector2 lastMovedVector;
     // Start is called before the first frame update
+
+    void Awake(){
+        currMoveSpeed = playerData.MoveSpeed;
+    }
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -50,6 +55,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move(){
 
-        rigidBody.velocity = new Vector2(moveDir.x * moveSpeed, moveDir.y * moveSpeed);
+        rigidBody.velocity = new Vector2(moveDir.x * currMoveSpeed, moveDir.y * currMoveSpeed);
     }
 }

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44efcd57e32fc49acb9ce02b66aa3b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  playerData: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
   moveDir: {x: 0, y: 0}
   lastX: 0
   lastY: 0
