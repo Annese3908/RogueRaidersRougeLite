@@ -12,20 +12,20 @@
 //     // create bool variable to see if room is locked, initially start as false
 //     private bool roomLocked = false;
 
-//     void OnTriggerEnter2D(Collider2D other)
-//     {
-//         if (other.CompareTag("Player") && !roomLocked)
-//         {
-//             roomLocked = true;
-//             roomCollider.enabled = true;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !roomLocked)
+        {
+            roomLocked = true;
+            roomCollider.enabled = true;
 
-//             //start spawning enemies
-//             foreach (var spawner in enemySpawners)
-//             {
-//                 spawner.StartSpawning();
-//             }
-//         }
-//     }
+            //start spawning enemies
+            foreach (var spawner in enemySpawners)
+            {
+                spawner.StartSpawning();
+            }
+        }
+    }
 
 //     public void UnlockRoom()
 //     {

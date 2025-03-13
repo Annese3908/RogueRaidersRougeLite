@@ -2,14 +2,15 @@
 // using System.Collections.Generic;
 // using UnityEngine;
 
-// public class EnemySpawner : MonoBehaviour
-// {
-//     public GameObject[] enemyPrefabs; // Array for different enemy types
-//     public Transform[] spawnPoints;   // Points where enemies will spawn
-//     public int enemiesPerWave = 10;   // Total number of enemies per wave
-//     public int maxEnemies = 3;        // Maximum number of enemies at a time
-//     public float spawnDelay = 2f;     // Delay between spawns
-//     public int totalWaves = 3;        // Total number of waves
+public class EnemySpawner : MonoBehaviour
+{
+    public GameObject[] enemyPrefabs; // Array for different enemy types
+    public Transform[] spawnPoints;   // Points where enemies will spawn
+    public int enemiesPerWave = 10;   // Total number of enemies per wave
+    public int maxEnemies = 3;        // Maximum number of enemies at a time
+    public float spawnDelay = 2f;     // Delay between spawns
+    public int totalWaves = 3;        // Total number of waves
+    public RoomManager roomManager;
 
 //     private int enemiesSpawned = 0;
 //     private int enemiesRemaining;
@@ -21,35 +22,38 @@
 //         enemiesRemaining = enemiesPerWave;
 //     }
 
-//     void OnTriggerEnter(Collider other)
-//     {
-//         if (other.CompareTag("Player") && !isSpawning && wavesCount < totalWaves)
-//         {
-//             isSpawning = true;
-//             StartCoroutine(SpawnEnemies());
-//         }
-//     }
+    public void StartSpawning()
+    {
+        if (!isSpawning && wavesCount < totalWaves)
+        {
+            isSpawning = true;
+            StartCoroutine(SpawnEnemies());
+        }
+    }
 
-//     IEnumerator SpawnEnemies()
-//     {
-//         while (wavesCount < totalWaves)
-//         {
-//             enemiesRemaining = enemiesPerWave; // Reset enemiesRemaining for the new wave
-//             while (enemiesRemaining > 0)
-//             {
-//                 while (enemiesSpawned < maxEnemies && enemiesRemaining > 0)
-//                 {
-//                     SpawnEnemy();
-//                     yield return new WaitForSeconds(spawnDelay);
-//                 }
-//                 yield return null;
-//             }
-//             wavesCount++;
-//             yield return new WaitForSeconds(spawnDelay); // Delay between waves
-//         }
-//         // Unlock the room when all waves are finished
-//         RoomManager.UnlockRoom();
-//     }
+    IEnumerator SpawnEnemies()
+    {
+        while (wavesCount < totalWaves)
+        {
+            enemiesRemaining = enemiesPerWave; // Reset enemiesRemaining for the new wave
+            while (enemiesRemaining > 0)
+            {
+                while (enemiesSpawned < maxEnemies && enemiesRemaining > 0)
+                {
+                    SpawnEnemy();
+                    yield return new WaitForSeconds(spawnDelay);
+                }
+                yield return null;
+            }
+            wavesCount++;
+            yield return new WaitForSeconds(spawnDelay); // Delay between waves
+        }
+        // Unlock the room when all waves are finished
+        if (roomManager != null)
+        {
+            roomManager.UnlockRoom();
+        }
+    }
 
 //     void SpawnEnemy()
 //     {
