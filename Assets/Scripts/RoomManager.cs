@@ -15,6 +15,9 @@ public class RoomManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+//     // create bool variable to see if room is locked, initially start as false
+//     private bool roomLocked = false;
+/*
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !roomLocked && !roomCleared)
@@ -38,4 +41,11 @@ public class RoomManager : MonoBehaviour
         roomCleared = true;
         gameManager.RoomCleared();
     }
+}
+*/
+//     public void UnlockRoom()
+//     {
+//         roomCollider.enabled = false;
+//         roomLocked = false;
+//     }
 }

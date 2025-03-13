@@ -10,12 +10,16 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemies = 3;        // Maximum number of enemies at a time
     public float spawnDelay = 2f;     // Delay between spawns
     public int totalWaves = 3;        // Total number of waves
-    public RoomManager roomManager;
+    //public RoomManager roomManager;
 
     private int enemiesSpawned = 0;
     private int enemiesRemaining;
     private int wavesCount = 0;
     private bool isSpawning = false;
+/*     private int enemiesSpawned = 0;
+//     private int enemiesRemaining;
+//     private int wavesCount = 0;
+//     private bool isSpawning = false;
 
     void Start()
     {
@@ -55,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
             roomManager.UnlockRoom();
         }
     }
+    */
 
     void SpawnEnemy()
     {
@@ -95,5 +100,29 @@ public class EnemySpawner : MonoBehaviour
     {
         enemiesSpawned--;
     }
+//     GameObject GetEnemyTypeForWave()
+//     {
+//         if (wavesCount == 0)
+//         {
+//             return enemyPrefabs[0]; // First wave: only enemy1
+//         }
+//         else if (wavesCount == 1)
+//         {
+//             // Second wave: random between enemy1 and enemy2
+//             int index = Random.Range(0, 1);
+//             return enemyPrefabs[index];
+//         }
+//         else
+//         {
+//             // Third wave: random between enemy1, enemy2, and enemy3
+//             int index = Random.Range(0, 2);
+//             return enemyPrefabs[index];
+//         }
+//     }
+
+//     public void EnemyDefeated()
+//     {
+//         enemiesSpawned--;
+//     }
 }
 
