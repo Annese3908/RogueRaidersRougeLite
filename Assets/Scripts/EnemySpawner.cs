@@ -57,17 +57,18 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy()
-        void SpawnEnemy()
     {
         if (enemiesRemaining <= 0) return;
+        {
+            // Determine enemy type based on the current wave
+            GameObject enemyPrefab = GetEnemyTypeForWave();
 
-        // Determine enemy type based on the current wave
-        GameObject enemyPrefab = GetEnemyTypeForWave();
-
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-        enemiesSpawned++;
-        enemiesRemaining--;
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            enemiesSpawned++;
+            enemiesRemaining--;
+        }
+       
     }
 
     GameObject GetEnemyTypeForWave()
