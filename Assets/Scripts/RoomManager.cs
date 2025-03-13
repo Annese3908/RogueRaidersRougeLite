@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public Collider roomCollider;
+    public Collider2D roomCollider;
     public EnemySpawner[] enemySpawners;
     private bool roomLocked = false;
     private bool roomCleared = false;
@@ -15,7 +15,7 @@ public class RoomManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !roomLocked && !roomCleared)
         {
