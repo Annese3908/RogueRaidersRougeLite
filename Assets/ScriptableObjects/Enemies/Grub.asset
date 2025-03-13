@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f47dff15523a7435697bff31d50c4672, type: 3}
-  m_Name: Aphid Enemy
+  m_Name: Grub
   m_EditorClassIdentifier: 
   damage: 1
-  maxHealth: 15
-  moveSpeed: 2
+  maxHealth: 10
+  moveSpeed: 1

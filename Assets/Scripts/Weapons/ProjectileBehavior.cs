@@ -58,12 +58,18 @@ public class ProjectileBehavior : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation); //cannot convert vector
     }
 
-    protected virtual void OntriggerEnter2D(Collider2D col){
+    protected virtual void OnTriggerEnter2D(Collider2D col){
         // hit enemy
         if(col.CompareTag("Enemy")){
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            enemy.TakeDamage(currDamage);
+            enemy.TakeDamage(currDamage); //must stay currDamage in case of buffs
+            ReducePierce();
         }
-
+    }
+    void ReducePierce() //control how many times a weapon can hit before deleting
+    {
+        if(currPierce <= 0){
+            Destroy(gameObject);
+        }
     }
 }
