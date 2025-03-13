@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1722b318e47f54b77b41a527a6559b37, type: 3}
   m_Name: PlayerScriptableObject
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 6
   moveSpeed: 5
   playerLives: 3
+  ammo: 20

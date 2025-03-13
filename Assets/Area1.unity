@@ -166,6 +166,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &57307943
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +430,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomPrefab: []
+  roomCollider: {fileID: 0}
+  enemySpawners: []
 --- !u!61 &140902179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -561,6 +571,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomPrefab: []
+  roomCollider: {fileID: 0}
+  enemySpawners: []
 --- !u!1 &295107338
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &367438594
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +745,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &455199232
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +871,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &725168045
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,6 +922,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &726124392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roomPrefab: []
+  roomCollider: {fileID: 0}
+  enemySpawners: []
 --- !u!4 &1501678018 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3207310101705743333, guid: a4485beeff1d940bf89761e17f1e2964, type: 3}
@@ -1098,6 +1142,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &1630165276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,6 +1193,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &1740658884
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1244,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1 &1887819522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,6 +1295,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 0}
 --- !u!1001 &959848586145512429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1510,6 +1582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7215139700569448864, guid: a4485beeff1d940bf89761e17f1e2964, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

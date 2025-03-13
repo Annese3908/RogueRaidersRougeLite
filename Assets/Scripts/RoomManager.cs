@@ -1,16 +1,16 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-// public class RoomManager : MonoBehaviour
-// {
-//     public GameObject[] roomPrefab;
-//     // create variables for collider and enemyspawner list
-//     public Collider roomCollider;
-//     public EnemySpawner[] enemySpawners;
+public class RoomManager : MonoBehaviour
+{
+    public GameObject[] roomPrefab;
+    // create variables for collider and enemyspawner list
+    public Collider roomCollider;
+    public EnemySpawner[] enemySpawners;
 
-//     // create bool variable to see if room is locked, initially start as false
-//     private bool roomLocked = false;
+    // create bool variable to see if room is locked, initially start as false
+    private bool roomLocked = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -27,9 +27,9 @@
         }
     }
 
-//     public void UnlockRoom()
-//     {
-//         roomCollider.enabled = false;
-//         roomLocked = false;
-//     }
-// }
+    public void UnlockRoom()
+    {
+        roomCollider.enabled = false;
+        roomLocked = false;
+    }
+}

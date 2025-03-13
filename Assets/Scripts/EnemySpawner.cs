@@ -1,6 +1,6 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -12,15 +12,16 @@ public class EnemySpawner : MonoBehaviour
     public int totalWaves = 3;        // Total number of waves
     public RoomManager roomManager;
 
-//     private int enemiesSpawned = 0;
-//     private int enemiesRemaining;
-//     private int wavesCount = 0;
-//     private bool isSpawning = false;
+    private int enemiesSpawned = 0;
+    private int enemiesRemaining;
+    private int wavesCount = 0;
+    private bool isSpawning = false;
 
-//     void Start()
-//     {
-//         enemiesRemaining = enemiesPerWave;
-//     }
+    void Start()
+    {
+        roomManager = GetComponent<RoomManager>();
+        enemiesRemaining = enemiesPerWave;
+    }
 
     public void StartSpawning()
     {
@@ -55,42 +56,42 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-//     void SpawnEnemy()
-//     {
-//         if (enemiesRemaining <= 0) return;
+        void SpawnEnemy()
+    {
+        if (enemiesRemaining <= 0) return;
 
-//         // Determine enemy type based on the current wave
-//         GameObject enemyPrefab = GetEnemyTypeForWave();
+        // Determine enemy type based on the current wave
+        GameObject enemyPrefab = GetEnemyTypeForWave();
 
-//         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-//         Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
-//         enemiesSpawned++;
-//         enemiesRemaining--;
-//     }
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        enemiesSpawned++;
+        enemiesRemaining--;
+    }
 
-//     GameObject GetEnemyTypeForWave()
-//     {
-//         if (wavesCount == 0)
-//         {
-//             return enemyPrefabs[0]; // First wave: only enemy1
-//         }
-//         else if (wavesCount == 1)
-//         {
-//             // Second wave: random between enemy1 and enemy2
-//             int index = Random.Range(0, 1);
-//             return enemyPrefabs[index];
-//         }
-//         else
-//         {
-//             // Third wave: random between enemy1, enemy2, and enemy3
-//             int index = Random.Range(0, 2);
-//             return enemyPrefabs[index];
-//         }
-//     }
+    GameObject GetEnemyTypeForWave()
+    {
+        if (wavesCount == 0)
+        {
+            return enemyPrefabs[0]; // First wave: only enemy1
+        }
+        else if (wavesCount == 1)
+        {
+            // Second wave: random between enemy1 and enemy2
+            int index = Random.Range(0, 1);
+            return enemyPrefabs[index];
+        }
+        else
+        {
+            // Third wave: random between enemy1, enemy2, and enemy3
+            int index = Random.Range(0, 2);
+            return enemyPrefabs[index];
+        }
+    }
 
-//     public void EnemyDefeated()
-//     {
-//         enemiesSpawned--;
-//     }
-// }
+    public void EnemyDefeated()
+    {
+        enemiesSpawned--;
+    }
+}
 
