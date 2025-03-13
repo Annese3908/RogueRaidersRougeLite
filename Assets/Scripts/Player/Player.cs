@@ -8,8 +8,8 @@ public class Player : ScriptableObject
 {
 
     [SerializeField]
-    float maxHealth;
-    public float MaxHealth { get => maxHealth; private set => maxHealth = value; }
+    int maxHealth;
+    public int MaxHealth { get => maxHealth; private set => maxHealth = value; }
     [SerializeField]
     float moveSpeed;
     public float MoveSpeed { get => moveSpeed; private set => moveSpeed = value; }
@@ -18,7 +18,14 @@ public class Player : ScriptableObject
     public int PlayerLives { get => playerLives; private set => playerLives = value; }
     protected bool playerAlive;
     [SerializeField]
-    int ammo;
-    public int Ammo { get => ammo; private set => ammo = value; }
+    int maxAmmo;
+    public int MaxAmmo { get => maxAmmo; private set =>maxAmmo = value; }
+    [SerializeField]
+    int buckets;
+    public int Buckets { get => buckets; private set => buckets = value; }
+    [SerializeField]
+    int waterPerBucket;
+    public int WaterPerBucket { get => waterPerBucket; private set => waterPerBucket = value; }
+    public int MaxWater { get => buckets * waterPerBucket; }
 
 }

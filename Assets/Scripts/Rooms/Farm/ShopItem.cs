@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class ShopItem : InteractableObject
 {
-    /*
     [SerializeField] protected SpriteRenderer waterSprite;
-    [SerializeField] protected Player player;
+    [SerializeField] protected PlayerStats player;
 
     protected virtual bool CanBeBought()
     {
-        return player.FullBucketCount() > 0;
+        return player.FilledBuckets() > 0;
     }
 
     protected virtual void BuyItem()
     {
         player.SpendBucket();
     }
-    */
     public override void Interact()
     {
-        //if (CanBeBought())
-            //BuyItem();
+        if (CanBeBought())
+            BuyItem();
     }
-    /*
     public override void Update()
     {
         waterSprite.enabled = isInteractable & CanBeBought();
 
         base.Update();
     }
-    */
 }

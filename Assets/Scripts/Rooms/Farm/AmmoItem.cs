@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class AmmoItem : ShopItem
 {
-    /*
     protected override bool CanBeBought()
     {
         //cannot buy item if at full ammo
 
-        if (player.ammo == player.GetMaxAmmo())
+        if (player.AtFullAmmo())
             return false;
         return base.CanBeBought();
     }
 
     protected override void BuyItem()
     {
-        //full heal when bought
+        //refill ammo when bought
 
         player.RefillAmmo();
         base.BuyItem();
     }
-    */
 }
