@@ -11,13 +11,13 @@ public class Farm : MonoBehaviour
     [SerializeField]
     private FarmPlot[] plots;
     [SerializeField]
-    private SeedInventory seedPackets;
+    private SeedInventory playersSeeds;
 
     private bool playerInFarm = true;
 
     public void ReadyPlots()
     {
-        bool hasSeedsToPlant = seedPackets.FindPacket(PacketState.Full) > 0;
+        bool hasSeedsToPlant = playersSeeds.FindPacket(PacketState.Full) > 0;
         //bool hasWaterToUse = player.FullBucketCount() > 0;
 
         for (int i = 0; i < plots.Length; i++)
@@ -46,10 +46,10 @@ public class Farm : MonoBehaviour
                 {
                     case PlotState.Empty:
                         //find first availible seeds and plant them 
-                        int packet = seedPackets.FindPacket(PacketState.Full);
-                        seedPackets.AdvancePacket(packet);
+                        int packet = playersSeeds.FindPacket(PacketState.Full);
+                        playersSeeds.AdvancePacket(packet);
 
-                        plots[i].PlantSeeds(seedPackets.GetSeeds(packet));
+                        plots[i].PlantSeeds(playersSeeds.GetSeeds(packet));
                         break;
 
                     case PlotState.Planted:

@@ -15,6 +15,11 @@ public class SeedInventory : MonoBehaviour
         }
     }
 
+    public void DebugGivePackets()
+    {
+
+    }
+
     public void AdvancePacket(int packet)
     {
         packets[packet].state++;

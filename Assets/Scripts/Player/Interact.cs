@@ -7,32 +7,35 @@ public class Interact : MonoBehaviour
     // distance in which the player can interact with an object
     public float interactDistance = 3f;
 
-    //layer mask to specify which objects are interactable
-    public LayerMask interactableLayer;
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        // check if the E key is pressed
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            InteractWithObject();
-        }
+        InteractWithObject(FindInteracable());
     }
 
-    void InteractWithObject()
+    private void InteractWithObject(Interactable interactable)
+    {
+        if (interactable == null)
+            return;
+
+        //tell object that it is targeted for interaction
+        interactable.Target();
+
+        // check if the E key is pressed
+        if (Input.GetKeyDown(KeyCode.E))
+            interactable.Interact();
+    }
+
+    private Interactable FindInteracable()
     {
         RaycastHit hit;
 
         // send a raycast from the players position foward to detect interactable object
-        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance, interactableLayer))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != null)
-            {
-                // call the interact method on the interactable object
-                interactable.Interact();
-            }
+            //return interactable script if object is interactable
+            if (hit.collider.CompareTag("Interactables"))
+                return hit.collider.GetComponent<Interactable>();
         }
+        return null;
     }
 }
