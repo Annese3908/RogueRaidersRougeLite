@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        boss.SetActive(false);
+        //boss.SetActive(false);
 
         // Get all child objects of roomsParent and store them in the rooms array
         int childCount = roomsParent.transform.childCount;
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         if (clearedRooms >= 3 && !bossSpawned)
         {
-            spawnBoss();
+            //spawnBoss();
         }
     }
 
