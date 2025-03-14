@@ -17,7 +17,7 @@ public class Farm : MonoBehaviour
 
     public void ReadyPlots()
     {
-        bool hasSeedsToPlant = playersSeeds.FindPacket(PacketState.Full) > 0;
+        bool hasSeedsToPlant = playersSeeds.FindPacket(PacketState.Full) >= 0;
         bool hasWaterToUse = player.FilledBuckets() > 0;
 
         for (int i = 0; i < plots.Length; i++)
@@ -33,6 +33,11 @@ public class Farm : MonoBehaviour
                 case PlotState.Planted:
                     plots[i].SetReadiness(hasWaterToUse);
                     break;
+
+                //grown plots are always ready for harvest
+                case PlotState.Grown:
+                    plots[i].SetReadiness(true);
+                    break;
             }
         }
     }
@@ -41,36 +46,50 @@ public class Farm : MonoBehaviour
     {
         for (int i = 0;i < plots.Length;i++)
         {
-            if (plots[i].interacted == true)
+            //exit function if plot has not be interacted with
+            if (!plots[i].interacted)
+                return;
+
+            switch(plots[i].state)
             {
-                //reset interaction status
-                plots[i].interacted = false;
+                case PlotState.Empty:
+                    //find first packet of unplanted seeds
+                    int packetToPlant = playersSeeds.FindPacket(PacketState.Full);
 
-                switch(plots[i].state)
-                {
-                    case PlotState.Empty:
-                        //find first packet of unplanted seeds
-                        int packet = playersSeeds.FindPacket(PacketState.Full);
+                    //exit function if packet cant be found
+                    if (packetToPlant < 0)
+                        return;
 
-                        //plant seeds in plot and update packet to planted
-                        playersSeeds.AdvancePacket(packet);
-                        plots[i].PlantSeeds(playersSeeds.GetSeeds(packet));
-                        break;
+                    //plant seeds in plot and update packet to planted
+                    playersSeeds.AdvancePacket(packetToPlant);
+                    plots[i].PlantSeeds(playersSeeds.GetSeeds(packetToPlant));
+                    break;
 
-                    case PlotState.Planted:
-                        //use water to grow plant
-                        player.SpendBucket();
-                        plots[i].WaterPlants();
-                        break;
+                case PlotState.Planted:
+                    //use water to grow plant
+                    player.SpendBucket();
+                    plots[i].AdvancePlot();
+                    break;
 
-                    case PlotState.Grown:
-                        //give player upgrade
-                        plots[i].HarvestCrop();
-                        break;
-                }
+                case PlotState.Grown:
+                    //find the packet with the same seed type as plot
+                    int packetToHarvest = playersSeeds.FindPacket(plots[i].seedType);
 
-                ReadyPlots();
+                    //exit function if packet cant be found
+                    if (packetToHarvest < 0)
+                        return;
+
+                    //give player upgrade
+
+                    //advanced plot and seed packet to harvested
+                    playersSeeds.AdvancePacket(packetToHarvest);
+                    plots[i].AdvancePlot();
+                    break;
             }
+
+            //reset interaction
+            plots[i].interacted = false;
+            ReadyPlots();
         }
     }
 

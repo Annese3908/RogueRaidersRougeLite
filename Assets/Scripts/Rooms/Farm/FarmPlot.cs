@@ -4,6 +4,7 @@ using UnityEngine;
 using Seeds;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
+using UnityEditor.IMGUI.Controls;
 
 public class FarmPlot : InteractableObject
 {
@@ -17,35 +18,25 @@ public class FarmPlot : InteractableObject
 
     public bool interacted;
 
+    public void AdvancePlot()
+    {
+        state++;
+        isInteractable = false;
+    }
+
     public void PlantSeeds(SeedType seedsToPlant)
     {
+        //plant seed if plot is empty
+        if (state != PlotState.Empty)
+            return;
+
         seedType = seedsToPlant;
-        state = PlotState.Planted;
-
-        //enable plant sprite and set it to correct seed type
-        plantSprite.enabled = true;
-        plantSprite.sprite = seeds[(int)seedType - 1];
-    }
-
-    public void WaterPlants()
-    {
-        state = PlotState.Grown;
-
-        //change seed sprite to plant sprite of the same type
-        plantSprite.sprite = plants[(int)seedType - 1];
-    }
-
-    public SeedType HarvestCrop()
-    {
-        //plost cannot be interacted with after harvest
-        SetReadiness(false);
-
-        return seedType;
+        AdvancePlot();
     }
 
     public void SetReadiness(bool ready)
     {
-        //exit function if unchanged
+        //update prompt is readiness has changed
         if (ready == isInteractable)
             return;
 
@@ -53,12 +44,33 @@ public class FarmPlot : InteractableObject
         updatePromptSprite();
     }
 
+    public void UpdateCropSprite()
+    {
+        switch (state)
+        {
+            //plant sprite should not show is plot is empty
+            case PlotState.Empty:
+                plantSprite.enabled = false;
+                break;
+
+            //plant sprite should be the seed of the correct type
+            case PlotState.Planted:
+                plantSprite.enabled = true;
+                plantSprite.sprite = seeds[(int)seedType - 1];
+                break;
+
+            //plant sprite should be the plant of the correct type
+            case PlotState.Grown:
+                plantSprite.enabled = true;
+                plantSprite.sprite = plants[(int)seedType - 1];
+                break;
+        }
+    }
+
     public void updatePromptSprite()
     {
-        //show prompt if plot is interactable
         plotPromptSprite.enabled = isInteractable;
 
-        //display the prompt sprite that is needed at the plot's state
         plotPromptSprite.sprite = prompts[(int)state];
     }
 
@@ -69,6 +81,6 @@ public class FarmPlot : InteractableObject
 
     private void Awake()
     {
-        plotPromptSprite.sprite = prompts[0];
+        updatePromptSprite();
     }
 }

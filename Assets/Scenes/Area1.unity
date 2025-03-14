@@ -1313,7 +1313,7 @@ GameObject:
   - component: {fileID: 1474193474}
   - component: {fileID: 1474193475}
   - component: {fileID: 1474193476}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Farm Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
