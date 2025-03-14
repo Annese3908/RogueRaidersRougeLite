@@ -8,78 +8,63 @@ using Unity.VisualScripting;
 public class FarmPlot : InteractableObject
 {
     [SerializeField]
-    private SpriteRenderer waterSprite, packetSprite, plantSprite, sickleSprite;
+    private SpriteRenderer promptSR, plantSR;
+    private Sprite[] prompts, plants, seeds;
 
     public PlotState state;
-
-    private bool readyForNextStep;
+    public SeedType seedType = SeedType.none;
 
     public bool interacted;
-
-    public SeedType seedType = SeedType.none;
 
     public void PlantSeeds(SeedType seeds)
     {
         seedType = seeds;
-
         state = PlotState.Planted;
 
-        plantSprite.enabled = true;
-        //change sprite to correct seed sprite
+        //enable plant sprite and set it to proper plant type
+        plantSR.enabled = true;
     }
 
     public void WaterPlants()
     {
         state = PlotState.Grown;
 
-        //change sprite to correct plant sprite
+        //change plant sprite to proper fully grown sprite
     }
 
-    public void SetPlotReadiness(bool ready)
+    public SeedType HarvestCrop()
     {
-        //exit function if readiness is unchanged
-        if (ready == readyForNextStep)
-            return;
+        //plost cannot be interacted with after harvest
+        SetReadiness(false);
 
-        readyForNextStep = ready;
-        UpdateInteractSprites();
+        return seedType;
     }
 
-    public void UpdateInteractSprites()
+    public void SetReadiness(bool ready)
     {
-        if (!readyForNextStep)
-        {
-            waterSprite.enabled = false;
-            packetSprite.enabled = false;
-            sickleSprite.enabled = false;
+        //exit function if unchanged
+        if (ready == isInteractable)
             return;
-        }
 
-        switch (state)
-        {
-            case PlotState.Empty:
-                packetSprite.enabled = true;
-                break;
+        isInteractable = ready;
+        updatePromptSprite();
+    }
 
-            case PlotState.Planted:
-                packetSprite.enabled = false;
-                waterSprite.enabled = true;
-                break;
+    public void updatePromptSprite()
+    {
+        //show prompt if plot is interactable
+        promptSR.enabled = isInteractable;
 
-            case PlotState.Grown:
-                waterSprite.enabled = false;
-                sickleSprite.enabled= true;
-                break;
-        }
+        //display the prompt sprite that is needed at the plot's state
+        promptSR.sprite = prompts[(int)state];
     }
 
     public override void Interact()
     {
         interacted = true;
     }
-    public override void Update()
+    private void Awake()
     {
-        if (readyForNextStep)
-            base.Update();
+        promptSR.sprite = prompts[0];
     }
 }
