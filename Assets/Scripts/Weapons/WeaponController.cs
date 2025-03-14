@@ -6,12 +6,15 @@ public class WeaponController : MonoBehaviour
 {
     [Header("Weapon Stats")]
     public Weapons weaponData;
-    float currCooldown;
     protected PlayerMovement pm;
+    protected PlayerAnimator pa;
+    float currCooldown;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
+        pa = pm.GetComponent<PlayerAnimator>();
         currCooldown = weaponData.CooldownDuration;
     }
 
@@ -20,6 +23,7 @@ public class WeaponController : MonoBehaviour
     {
         currCooldown -= Time.deltaTime;
         if (currCooldown <= 0f){
+            pa?.OnAttack();
             Attack();
         }
     }
