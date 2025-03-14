@@ -518,6 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452133570}
   - component: {fileID: 452133571}
+  - component: {fileID: 452133572}
   m_Layer: 0
   m_Name: Room3
   m_TagString: Untagged
@@ -588,6 +589,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.89, y: 13.84}
   m_EdgeRadius: 0
+--- !u!114 &452133572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452133569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 452133571}
+  enemySpawners: []
 --- !u!1 &455199232
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539924352}
   - component: {fileID: 539924353}
+  - component: {fileID: 539924354}
   m_Layer: 0
   m_Name: Room1
   m_TagString: Untagged
@@ -823,6 +839,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14, y: 14.95}
   m_EdgeRadius: 0
+--- !u!114 &539924354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539924351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 539924353}
+  enemySpawners: []
 --- !u!1 &542040233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1719839551}
   - component: {fileID: 1719839552}
+  - component: {fileID: 1719839553}
   m_Layer: 0
   m_Name: Room2
   m_TagString: Untagged
@@ -1878,6 +1909,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.94, y: 13.85}
   m_EdgeRadius: 0
+--- !u!114 &1719839553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719839550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 1719839552}
+  enemySpawners: []
 --- !u!1 &1740658884
 GameObject:
   m_ObjectHideFlags: 0
