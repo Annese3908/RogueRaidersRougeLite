@@ -4,35 +4,35 @@ using UnityEngine;
 
 abstract public class InteractableObject : MonoBehaviour, Interactable
 {
+    [SerializeField]
+    protected SpriteRenderer promptSprite;
+    [SerializeField]
+    private float promptDuration = .25f;
+    private float timeUntargeted = 0;
+
+    protected bool isTarget;
     protected bool isInteractable;
 
     public abstract void Interact();
 
+    public void Target()
+    {
+        isTarget = true;
+        timeUntargeted = 0;
+    }
+
     public virtual void Update()
     {
-        if (isInteractable & Input.GetKeyDown("space"))
+        //untarget object if prompt duration ends
+        if (timeUntargeted < promptDuration)
         {
-            Interact();
+            timeUntargeted += Time.deltaTime;
         }
-    }
-    protected void OnTriggerEnter2D(Collider2D other)
-    {
-        //is interactable if player is in trigger
-
-        if (other.GetComponent<Player>() == null) //stops function if collider is not the player
-            return;
-
-        isInteractable = true;
-    }
-
-    protected void OnTriggerExit2D(Collider2D other)
-    {
-        //is not interactable if player leaves trigger
-
-        if (isInteractable)
+        else
         {
-            if (other.GetComponent<Player>() != null)
-                isInteractable = false;
+            isTarget = false;
         }
+
+        promptSprite.enabled = isInteractable;
     }
 }

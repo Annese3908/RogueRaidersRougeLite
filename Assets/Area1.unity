@@ -169,6 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0ae161e0110424f9736df4aef75ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptSprite: {fileID: 0}
+  promptDuration: 0.25
   waterSprite: {fileID: 1045088058}
   player: {fileID: 2371925485791237866}
 --- !u!212 &734197
@@ -665,6 +667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452133570}
   - component: {fileID: 452133571}
+  - component: {fileID: 452133572}
   m_Layer: 0
   m_Name: Room3
   m_TagString: Untagged
@@ -735,6 +738,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.89, y: 13.84}
   m_EdgeRadius: 0
+--- !u!114 &452133572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452133569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 452133571}
+  enemySpawners:
+  - {fileID: 1503206252}
+  - {fileID: 1749345974}
+  - {fileID: 1042518968}
 --- !u!1 &455199232
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 539924352}
   - component: {fileID: 539924353}
+  - component: {fileID: 539924354}
   m_Layer: 0
   m_Name: Room1
   m_TagString: Untagged
@@ -970,6 +991,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14, y: 14.95}
   m_EdgeRadius: 0
+--- !u!114 &539924354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539924351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 539924353}
+  enemySpawners:
+  - {fileID: 561156891}
+  - {fileID: 725168047}
+  - {fileID: 1692751911}
 --- !u!1 &542040233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1055,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b0ae161e0110424f9736df4aef75ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promptSprite: {fileID: 0}
+  promptDuration: 0.25
   waterSprite: {fileID: 797515014}
   player: {fileID: 2371925485791237866}
 --- !u!212 &542040236
@@ -1121,7 +1161,7 @@ MonoBehaviour:
   maxEnemies: 3
   spawnDelay: 2
   totalWaves: 3
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 539924354}
 --- !u!1 &725168045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1212,7 @@ MonoBehaviour:
   maxEnemies: 3
   spawnDelay: 2
   totalWaves: 3
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 539924354}
 --- !u!1 &726124392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,6 +1374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 955227147}
+  - component: {fileID: 955227148}
   m_Layer: 0
   m_Name: EnemySpawner1
   m_TagString: Untagged
@@ -1356,6 +1397,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1719839551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &955227148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955227146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 1719839553}
 --- !u!4 &1011912230
 Transform:
   m_ObjectHideFlags: 0
@@ -1436,6 +1496,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1386917309907068424, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
   m_PrefabInstance: {fileID: 1013557806}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1013557808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542315568164196822, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
+  m_PrefabInstance: {fileID: 1013557806}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c233b684d73517478b775f6ea3cd3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1042518966
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,6 +1516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1042518967}
+  - component: {fileID: 1042518968}
   m_Layer: 0
   m_Name: EnemySpawner3
   m_TagString: Untagged
@@ -1467,6 +1539,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 452133570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1042518968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042518966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 452133572}
 --- !u!1 &1045088056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,11 +1704,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1386917309907068424, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
   m_PrefabInstance: {fileID: 1051866084}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1164905838
+--- !u!114 &1051866086 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 7542315568164196822, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
+  m_PrefabInstance: {fileID: 1051866084}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -1625,13 +1715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c233b684d73517478b775f6ea3cd3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterSprite: {fileID: 0}
-  packetSprite: {fileID: 0}
-  plantSprite: {fileID: 0}
-  sickleSprite: {fileID: 0}
-  state: 0
-  interacted: 0
-  seedType: 0
 --- !u!1 &1200778442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,10 +1894,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 1164905838}
-  seedPackets: {fileID: 0}
+  - {fileID: 1051866086}
+  - {fileID: 1013557808}
+  - {fileID: 1950838809}
+  playersSeeds: {fileID: 0}
 --- !u!1 &1500146260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1974,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503206251}
+  - component: {fileID: 1503206252}
   m_Layer: 0
   m_Name: EnemySpawner1
   m_TagString: Untagged
@@ -1913,6 +1997,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 452133570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503206252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503206250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 452133572}
 --- !u!1 &1692751909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +2025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1692751910}
+  - component: {fileID: 1692751911}
   m_Layer: 0
   m_Name: EnemySpawner1
   m_TagString: Untagged
@@ -1944,6 +2048,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 539924352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1692751911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692751909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 539924354}
 --- !u!1 &1719839550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1954,6 +2077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1719839551}
   - component: {fileID: 1719839552}
+  - component: {fileID: 1719839553}
   m_Layer: 0
   m_Name: Room2
   m_TagString: Untagged
@@ -1975,8 +2099,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1740658885}
-  - {fileID: 2010234086}
   - {fileID: 955227147}
+  - {fileID: 2010234086}
   m_Father: {fileID: 1011912230}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1719839552
@@ -2024,6 +2148,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 13.94, y: 13.85}
   m_EdgeRadius: 0
+--- !u!114 &1719839553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719839550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39600efdb2b06dc499064d78cfa773d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomCollider: {fileID: 1719839552}
+  enemySpawners:
+  - {fileID: 1740658886}
+  - {fileID: 2010234087}
+  - {fileID: 955227148}
 --- !u!1 &1740658884
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2215,7 @@ MonoBehaviour:
   maxEnemies: 3
   spawnDelay: 2
   totalWaves: 3
-  roomManager: {fileID: 0}
+  roomManager: {fileID: 1719839553}
 --- !u!1 &1749345972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1749345973}
+  - component: {fileID: 1749345974}
   m_Layer: 0
   m_Name: EnemySpawner2
   m_TagString: Untagged
@@ -2106,6 +2248,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 452133570}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1749345974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749345972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 452133572}
 --- !u!1 &1884789657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2300,6 +2461,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1386917309907068424, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
   m_PrefabInstance: {fileID: 1950838807}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1950838809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7542315568164196822, guid: 279881de2b9bbf449877242bcba2a5e1, type: 3}
+  m_PrefabInstance: {fileID: 1950838807}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c233b684d73517478b775f6ea3cd3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2010234085
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,6 +2481,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2010234086}
+  - component: {fileID: 2010234087}
   m_Layer: 0
   m_Name: EnemySpawner2
   m_TagString: Untagged
@@ -2331,6 +2504,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1719839551}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2010234087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010234085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a059f099a52761479b9257113847e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs: []
+  spawnPoints: []
+  enemiesPerWave: 10
+  maxEnemies: 3
+  spawnDelay: 2
+  totalWaves: 3
+  roomManager: {fileID: 1719839553}
 --- !u!1 &2030289905
 GameObject:
   m_ObjectHideFlags: 0

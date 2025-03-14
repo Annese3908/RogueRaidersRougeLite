@@ -23,8 +23,9 @@ public class ShopItem : InteractableObject
     }
     public override void Update()
     {
-        waterSprite.enabled = isInteractable & CanBeBought();
-
         base.Update();
+
+        isInteractable = CanBeBought();
+        waterSprite.enabled = isInteractable;
     }
 }

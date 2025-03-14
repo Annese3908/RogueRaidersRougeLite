@@ -7,26 +7,31 @@ using UnityEngine;
 public class Farm : MonoBehaviour
 {
     [SerializeField]
+    private PlayerStats player;
+    [SerializeField]
     private FarmPlot[] plots;
     [SerializeField]
-    private SeedInventory seedPackets;
+    private SeedInventory playersSeeds;
 
     private bool playerInFarm = true;
 
     public void ReadyPlots()
     {
-        bool hasSeedsToPlant = seedPackets.FindPacket(PacketState.Full) > 0;
-        //bool hasWaterToUse = player.FullBucketCount() > 0;
+        bool hasSeedsToPlant = playersSeeds.FindPacket(PacketState.Full) > 0;
+        bool hasWaterToUse = player.FilledBuckets() > 0;
 
         for (int i = 0; i < plots.Length; i++)
         {
             switch (plots[i].state)
             {
+                //empty plots are ready if player has unplanted seeds
                 case PlotState.Empty:
-                    plots[i].SetPlotReadiness(hasSeedsToPlant);
+                    plots[i].SetReadiness(hasSeedsToPlant);
                     break;
+
+                //planted plots are ready if player has at least 1 bucket of water
                 case PlotState.Planted:
-                    //plots[i].SetPlotReadiness(hasWaterToUse);
+                    plots[i].SetReadiness(hasWaterToUse);
                     break;
             }
         }
@@ -34,34 +39,40 @@ public class Farm : MonoBehaviour
 
     public void checkForPlotInteractions()
     {
+        //find an interacted plot
         for (int i = 0;i < plots.Length;i++)
         {
             if (plots[i].interacted == true)
             {
+                //reset its interaction status
                 plots[i].interacted = false;
 
                 switch(plots[i].state)
                 {
+                    //empty plots are planted with seeds when interacted
                     case PlotState.Empty:
-                        //find first availible seeds and plant them 
-                        int packet = seedPackets.FindPacket(PacketState.Full);
-                        seedPackets.AdvancePacket(packet);
+                        //find first packet of unplanted seeds
+                        int packet = playersSeeds.FindPacket(PacketState.Full);
 
-                        plots[i].PlantSeeds(seedPackets.GetSeeds(packet));
+                        //plant seeds in plot and update packet to planted
+                        playersSeeds.AdvancePacket(packet);
+                        plots[i].PlantSeeds(playersSeeds.GetSeeds(packet));
                         break;
 
+                    //planted plots are water when interacted
                     case PlotState.Planted:
                         //use water to grow plant
-                        //player.SpendBucket();
+                        player.SpendBucket();
                         plots[i].WaterPlants();
                         break;
 
+                    //grown plots are harvested when interacted
                     case PlotState.Grown:
-                        //give upgrade
+                        //give player upgrade
+                        plots[i].HarvestCrop();
                         break;
                 }
 
-                plots[i].interacted = false;
                 ReadyPlots();
             }
         }
@@ -92,7 +103,7 @@ public class Farm : MonoBehaviour
         if (!playerInFarm)
             return;
 
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
             playerInFarm = false;
     }
 }
