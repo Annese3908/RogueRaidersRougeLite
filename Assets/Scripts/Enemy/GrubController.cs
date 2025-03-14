@@ -6,37 +6,57 @@ public class GrubController : EnemyController
 {
     SpriteRenderer sr;
     Animator am;
-    // Data for grub
     float currDamage;
+    EnemyMovement em;
 
-    // Start is called before the first frame update
-    void Awake(){
+    // Movement variables
+    private Vector2 attackDirection; // Direction of movement during attack
+    private float attackSpeedMultiplier = 5f; // Speed multiplier during attack
+    private bool isAttacking;
+    void Awake()
+    {
         currDamage = enemyData.Damage;
     }
-    protected override void Start()
-    {
+
+    protected override void Start(){
         base.Start();
+        em = GetComponent<EnemyMovement>();
         am = GetComponent<Animator>();
     }
-    // Update is called once per frame
+
     protected override void Update()
     {
+        base.Update(); // Call base Update to handle cooldown logic
         if (currCooldown <= 0f){
-            am.SetBool("Attacking", true);
-            Attack();
-           
-        } else{
-            am.SetBool("Attacking", false);
+            if (!isAttacking){
+                StartAttack();
+            } 
+            if (isAttacking){
+             MoveDuringAttack();
+            }
         }
     }
-   protected override void Attack(){
+
+    private void StartAttack()
+    {
+        isAttacking = true;
+        am.SetBool("Attacking", true);
+
+        // Store the current movement direction as the attack direction
+        attackDirection = em.moveDir;
+    }
+
+    private void MoveDuringAttack()
+    {
+        // Move grub in attack direction
+        transform.position += (Vector3)attackDirection * enemyData.MoveSpeed * attackSpeedMultiplier * Time.deltaTime;
+    }
+
+    protected override void Attack()
+    {
         base.Attack();
-   }
-    protected virtual void OnTriggerEnter2D(Collider2D col){
-        // hit player upon collision
-        if(col.CompareTag("Player")){
-            PlayerStats player = col.GetComponent<PlayerStats>();
-            player.TakeDamage(currDamage); //must stay currDamage in case of buffs
-        }
+        // Reset attack state after the attack is complete
+        isAttacking = false;
+        am.SetBool("Attacking", false);
     }
 }

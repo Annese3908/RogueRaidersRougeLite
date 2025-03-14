@@ -60,10 +60,11 @@
     <Analyzer Include="F:\Program Files\Unity\2022.3.57f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Enemy\AntBehavior.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AntWeaponController.cs" />
     <Compile Include="Assets\Scripts\Weapons\DaggerBehavior.cs" />
     <Compile Include="Assets\Scripts\Weapons\Weapons.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AntShotBehavior.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\HealItem.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\FarmPlot.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
@@ -83,11 +84,13 @@
     <Compile Include="Assets\Scripts\Rooms\Farm\Farm.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\AmmoItem.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AntShotController.cs" />
     <Compile Include="Assets\Scripts\Interactable.cs" />
     <Compile Include="Assets\Scripts\Weapons\ProjectileBehavior.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\ShopItem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\Seed Inventory.cs" />
+    <Compile Include="Assets\Scripts\Enemy\AntAnimator.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerStats.cs" />
   </ItemGroup>
   <ItemGroup>

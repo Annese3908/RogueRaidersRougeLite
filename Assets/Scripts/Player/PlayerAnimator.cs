@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerAnimator : MonoBehaviour
 {
-    Animator am;
     PlayerMovement pm;
     SpriteRenderer sr;
+    Animator am;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,10 +26,20 @@ public class PlayerAnimator : MonoBehaviour
             am.SetBool("Move", false);
         }
     }
+    public void OnAttack()
+    {
+        am.SetBool("Attack", true);
+        StartCoroutine(ResetAttackAfterDelay());
+    }
+    IEnumerator ResetAttackAfterDelay()
+    {
+        yield return new WaitForSeconds(0.4f); // Wait for the attack duration
+        am.SetBool("Attack", false); // Reset the Attack parameter
+    }
 
     void SpriteDirection()
     {
-        if(pm.lastX < 0){
+        if(pm.lastX > 0){
             sr.flipX = true;
         }
         else{

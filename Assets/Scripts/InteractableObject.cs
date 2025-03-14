@@ -5,7 +5,7 @@ using UnityEngine;
 abstract public class InteractableObject : MonoBehaviour, Interactable
 {
     [SerializeField]
-    protected SpriteRenderer promptSprite;
+    private SpriteRenderer promptSprite;
     [SerializeField]
     private float promptDuration = .25f;
     private float timeUntargeted = 0;
