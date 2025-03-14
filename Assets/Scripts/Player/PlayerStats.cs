@@ -94,6 +94,6 @@ public class PlayerStats : MonoBehaviour
     {
         currHealth = playerData.MaxHealth / 2;
         currAmmo = playerData.MaxAmmo / 2;
-        currWater = (int)(playerData.WaterPerBucket * 2.5);
+        currWater = (int)(playerData.WaterPerBucket * 3);
     }
 }

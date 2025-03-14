@@ -22,6 +22,9 @@ public class FarmPlot : InteractableObject
     {
         state++;
         isInteractable = false;
+
+        Debug.Log(gameObject.name + " is " + state);
+
     }
 
     public void PlantSeeds(SeedType seedsToPlant)
@@ -77,6 +80,8 @@ public class FarmPlot : InteractableObject
     public override void Interact()
     {
         interacted = true;
+
+        Debug.Log(gameObject.name + " (" + state + ") was interacted with");
     }
 
     private void Awake()

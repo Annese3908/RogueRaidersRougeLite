@@ -27,7 +27,7 @@ public class SeedInventory : MonoBehaviour
     {
         packets[packet].state++;
 
-        Debug.Log("Packet " + packet + ": is " + packets[packet].state);
+        //Debug.Log("Packet " + packet + ": is " + packets[packet].state);
     }
 
     public void CollectSeeds(SeedType type)
@@ -37,6 +37,7 @@ public class SeedInventory : MonoBehaviour
 
         if (packet > -1 & !hasSeeds)
         {
+            Debug.Log("Player collected " + type + " seeds");
             packets[packet].type = type;
             AdvancePacket(packet);
         }

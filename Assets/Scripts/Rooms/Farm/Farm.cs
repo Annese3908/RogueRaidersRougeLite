@@ -46,9 +46,9 @@ public class Farm : MonoBehaviour
     {
         for (int i = 0;i < plots.Length;i++)
         {
-            //exit function if plot has not be interacted with
+            //skip plot if it hasnt interacted
             if (!plots[i].interacted)
-                return;
+                continue;
 
             switch(plots[i].state)
             {
@@ -108,6 +108,7 @@ public class Farm : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Player has entered farm");
             playerInFarm = true;
             ReadyPlots();
         }
@@ -119,6 +120,9 @@ public class Farm : MonoBehaviour
             return;
 
         if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player has exited farm");
             playerInFarm = false;
+        }
     }
 }
