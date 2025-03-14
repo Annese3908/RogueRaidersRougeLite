@@ -6,49 +6,51 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     // distance in which the player can interact with an object
-    public float interactDistance = 3f;
-
-    private GameObject directionDebugger;
-
-    private void FixedUpdate()
-    {
-        InteractWithObject(FindInteracable());
-    }
-
-    private void InteractWithObject(Interactable interactable)
-    {
-        if (interactable == null)
-            return;
-
-        //tell object that it is targeted for interaction
-        interactable.Target();
-
-        // check if the E key is pressed
-        if (Input.GetKeyDown(KeyCode.E))
-            interactable.Interact();
-    }
-
-    private Interactable FindInteracable()
-    {
-        RaycastHit hit;
-
-        // send a raycast from the players position foward to detect interactable object
-        if (Physics.Raycast(transform.position, transform.forward, out hit, interactDistance))
-        {
-            //return interactable script if object is interactable
-            if (hit.collider.CompareTag("Interactables"))
-                return hit.collider.GetComponent<Interactable>();
-        }
-        return null;
-    }
+    public Interactable obj;
 
     public void Update()
     {
-        directionDebugger.transform.position = transform.position + transform.forward;
+        //if there is a targeted object, and the interact key is pressed, interact with object
+        if (obj != null & Input.GetKeyDown(KeyCode.E))
+        {
+            obj.Interact();
+        }
     }
 
-    public void Awake()
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        directionDebugger = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        //exit function if object is not interactable object
+        if (!other.CompareTag("Interactable"))
+            return;
+
+        Interactable newObject = other.GetComponent<Interactable>();
+
+        //exit function if new object is not interactable
+        if (!newObject.IsInteractable())
+            return;
+
+        //if an object is already targeted, untarget it
+        if (obj != null)
+            obj.Target(false);
+
+        //target new object
+        obj = newObject;
+        obj.Target(true);
+    }
+
+    public void OnTriggerExit2D(Collider2D other)
+    {
+        //exit function if object is not interactable object
+        if (!other.CompareTag("Interactable"))
+            return;
+
+        Interactable newObject = other.GetComponent<Interactable>();
+
+        //if targeted object exited, untarget it 
+        if (newObject == obj)
+        {
+            obj = null;
+            newObject.Target(false);
+        }
     }
 }

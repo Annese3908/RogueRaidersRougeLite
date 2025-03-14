@@ -8,5 +8,7 @@ public interface Interactable
 {
     void Interact();
 
-    void Target();
+    void Target(bool targeted);
+    bool IsTargeted();
+    bool IsInteractable();
 }

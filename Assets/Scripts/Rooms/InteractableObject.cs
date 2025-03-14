@@ -6,33 +6,30 @@ abstract public class InteractableObject : MonoBehaviour, Interactable
 {
     [SerializeField]
     private SpriteRenderer promptSprite;
-    [SerializeField]
-    private float promptDuration = .25f;
-    private float timeUntargeted = 0;
 
     protected bool isTarget;
     protected bool isInteractable;
 
     public abstract void Interact();
 
-    public void Target()
+    public void Target(bool targeted)
     {
-        isTarget = true;
-        timeUntargeted = 0;
+        //Debug.Log(gameObject.name + " targeted: " + targeted);
+        isTarget = targeted;
+    }
+
+    public bool IsTargeted()
+    {
+        return isTarget;
+    }
+
+    public bool IsInteractable()
+    {
+        return isInteractable;
     }
 
     public virtual void Update()
     {
-        //untarget object if prompt duration ends
-        if (timeUntargeted < promptDuration)
-        {
-            timeUntargeted += Time.deltaTime;
-        }
-        else
-        {
-            isTarget = false;
-        }
-
-        promptSprite.enabled = isInteractable;
+        promptSprite.enabled = isInteractable && isTarget;
     }
 }

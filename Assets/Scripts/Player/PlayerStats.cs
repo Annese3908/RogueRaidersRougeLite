@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
         currHealth = playerData.MaxHealth;
         currLives = playerData.PlayerLives;
         currAmmo = playerData.MaxAmmo;
+
+        startingStatsDebug();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class PlayerStats : MonoBehaviour
 
     public void FullHeal()
     {
+        Debug.Log("Health is Full");
         currHealth = playerData.MaxHealth;
     }
 
@@ -50,6 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     public void RefillAmmo()
     {
+        Debug.Log("Ammo is refilled");
         currAmmo = playerData.MaxAmmo;
     }
 
@@ -65,7 +69,10 @@ public class PlayerStats : MonoBehaviour
 
     public void SpendBucket()
     {
-        currWater -= playerData.WaterPerBucket;
+        Debug.Log("Bucket had been spent");
+        if (currWater >= playerData.WaterPerBucket)
+            currWater -= playerData.WaterPerBucket;
+        Debug.Log("Remaining water: " + currWater);
     }
 
     public int FilledBuckets()
@@ -81,5 +88,12 @@ public class PlayerStats : MonoBehaviour
     public int Ammo()
     {
         return currAmmo;
+    }
+
+    private void startingStatsDebug()
+    {
+        currHealth = playerData.MaxHealth / 2;
+        currAmmo = playerData.MaxAmmo / 2;
+        currWater = (int)(playerData.WaterPerBucket * 2.5);
     }
 }
