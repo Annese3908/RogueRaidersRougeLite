@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e596fcb1c944ade8794388a64cc8b5, type: 3}
   m_Name: AntShot
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3064685464778120916, guid: bbf0478b685274f2fa7255205b4b3429, type: 3}
   damage: 2
   speed: 4
   cooldownDuration: 3
