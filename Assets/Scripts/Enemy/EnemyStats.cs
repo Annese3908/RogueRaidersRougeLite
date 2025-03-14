@@ -28,11 +28,4 @@ public class EnemyStats : MonoBehaviour
     public void Kill(){
         Destroy(gameObject);
     }
-    protected virtual void OnTriggerEnter2D(Collider2D col){
-        // hit player upon collision
-        if(col.CompareTag("Player")){
-            PlayerStats player = col.GetComponent<PlayerStats>();
-            player.TakeDamage(currDamage); //must stay currDamage in case of buffs
-        }
-    }
 }

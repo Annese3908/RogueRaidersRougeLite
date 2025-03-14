@@ -5,13 +5,17 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Enemy enemyData;
-    // Data for grub
+    // Data for enemy
    protected float currCooldown;
+   protected float currDamage;
 
     // Start is called before the first frame update
+    void Awake(){
+        currDamage = enemyData.Damage;
+    }
     protected virtual void Start()
     {
-        currCooldown = 5f;
+        currCooldown = 3f;
     }
     // Update is called once per frame
     protected virtual void Update()
@@ -22,6 +26,16 @@ public class EnemyController : MonoBehaviour
         }
     }
    protected virtual void Attack(){
-        currCooldown = 5f;
+        currCooldown = 3f;
    }
+   protected virtual void OnTriggerEnter2D(Collider2D col){
+
+        // hit player upon collision
+        if(currCooldown <= 0f){
+            if(col.CompareTag("Player")){
+                PlayerStats player = col.GetComponent<PlayerStats>();
+                player.TakeDamage(currDamage); //must stay currDamage in case of buffs
+            }
+        }
+    }
 }

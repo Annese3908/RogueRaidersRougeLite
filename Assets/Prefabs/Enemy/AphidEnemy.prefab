@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 2338855330137540673}
   - component: {fileID: 7599073037245204191}
   - component: {fileID: 781851666370247039}
+  - component: {fileID: 5892181053171731488}
   m_Layer: 0
   m_Name: AphidEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1608068094672119712
 Transform:
   m_ObjectHideFlags: 0
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 1c232c367313748fe8522e501c9054b5, type: 2}
+  moveDir: {x: 0, y: 0}
 --- !u!114 &781851666370247039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +179,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec7358752b67545c0909e368f07e3fe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: 1c232c367313748fe8522e501c9054b5, type: 2}
+--- !u!114 &5892181053171731488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690560108611330802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2abb6c2644b9e4f00ba3dfa6c97efb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 1c232c367313748fe8522e501c9054b5, type: 2}

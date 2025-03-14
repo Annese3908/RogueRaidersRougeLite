@@ -6,17 +6,12 @@ public class GrubController : EnemyController
 {
     SpriteRenderer sr;
     Animator am;
-    float currDamage;
     EnemyMovement em;
 
     // Movement variables
     private Vector2 attackDirection; // Direction of movement during attack
     private float attackSpeedMultiplier = 5f; // Speed multiplier during attack
     private bool isAttacking;
-    void Awake()
-    {
-        currDamage = enemyData.Damage;
-    }
 
     protected override void Start(){
         base.Start();
