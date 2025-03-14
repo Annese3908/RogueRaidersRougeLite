@@ -7,8 +7,6 @@ using UnityEngine;
 public class Farm : MonoBehaviour
 {
     [SerializeField]
-    private Player player;
-    [SerializeField]
     private FarmPlot[] plots;
     [SerializeField]
     private SeedInventory seedPackets;
@@ -82,7 +80,7 @@ public class Farm : MonoBehaviour
         if (playerInFarm)
             return;
 
-        if (other.gameObject.GetComponent<Player>() != null)
+        if (other.CompareTag("Player"))
         {
             playerInFarm = true;
             ReadyPlots();
@@ -94,7 +92,7 @@ public class Farm : MonoBehaviour
         if (!playerInFarm)
             return;
 
-        if (other.gameObject.GetComponent<Player>() != null)
+        if (!other.CompareTag("Player"))
             playerInFarm = false;
     }
 }
