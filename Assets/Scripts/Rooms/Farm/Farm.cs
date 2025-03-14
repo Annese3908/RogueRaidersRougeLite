@@ -39,17 +39,15 @@ public class Farm : MonoBehaviour
 
     public void checkForPlotInteractions()
     {
-        //find an interacted plot
         for (int i = 0;i < plots.Length;i++)
         {
             if (plots[i].interacted == true)
             {
-                //reset its interaction status
+                //reset interaction status
                 plots[i].interacted = false;
 
                 switch(plots[i].state)
                 {
-                    //empty plots are planted with seeds when interacted
                     case PlotState.Empty:
                         //find first packet of unplanted seeds
                         int packet = playersSeeds.FindPacket(PacketState.Full);
@@ -59,14 +57,12 @@ public class Farm : MonoBehaviour
                         plots[i].PlantSeeds(playersSeeds.GetSeeds(packet));
                         break;
 
-                    //planted plots are water when interacted
                     case PlotState.Planted:
                         //use water to grow plant
                         player.SpendBucket();
                         plots[i].WaterPlants();
                         break;
 
-                    //grown plots are harvested when interacted
                     case PlotState.Grown:
                         //give player upgrade
                         plots[i].HarvestCrop();

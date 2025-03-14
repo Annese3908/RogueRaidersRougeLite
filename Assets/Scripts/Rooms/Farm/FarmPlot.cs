@@ -8,7 +8,8 @@ using Unity.VisualScripting;
 public class FarmPlot : InteractableObject
 {
     [SerializeField]
-    private SpriteRenderer promptSR, plantSR;
+    private SpriteRenderer plotPromptSprite, plantSprite;
+    [SerializeField]
     private Sprite[] prompts, plants, seeds;
 
     public PlotState state;
@@ -16,20 +17,22 @@ public class FarmPlot : InteractableObject
 
     public bool interacted;
 
-    public void PlantSeeds(SeedType seeds)
+    public void PlantSeeds(SeedType seedsToPlant)
     {
-        seedType = seeds;
+        seedType = seedsToPlant;
         state = PlotState.Planted;
 
-        //enable plant sprite and set it to proper plant type
-        plantSR.enabled = true;
+        //enable plant sprite and set it to correct seed type
+        plantSprite.enabled = true;
+        plantSprite.sprite = seeds[(int)seedType - 1];
     }
 
     public void WaterPlants()
     {
         state = PlotState.Grown;
 
-        //change plant sprite to proper fully grown sprite
+        //change seed sprite to plant sprite of the same type
+        plantSprite.sprite = plants[(int)seedType - 1];
     }
 
     public SeedType HarvestCrop()
@@ -53,18 +56,19 @@ public class FarmPlot : InteractableObject
     public void updatePromptSprite()
     {
         //show prompt if plot is interactable
-        promptSR.enabled = isInteractable;
+        plotPromptSprite.enabled = isInteractable;
 
         //display the prompt sprite that is needed at the plot's state
-        promptSR.sprite = prompts[(int)state];
+        plotPromptSprite.sprite = prompts[(int)state];
     }
 
     public override void Interact()
     {
         interacted = true;
     }
+
     private void Awake()
     {
-        promptSR.sprite = prompts[0];
+        plotPromptSprite.sprite = prompts[0];
     }
 }
