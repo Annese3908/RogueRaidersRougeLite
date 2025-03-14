@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Interact : MonoBehaviour
 {
     // distance in which the player can interact with an object
     public float interactDistance = 3f;
+
+    private GameObject directionDebugger;
 
     private void FixedUpdate()
     {
@@ -37,5 +40,15 @@ public class Interact : MonoBehaviour
                 return hit.collider.GetComponent<Interactable>();
         }
         return null;
+    }
+
+    public void Update()
+    {
+        directionDebugger.transform.position = transform.position + transform.forward;
+    }
+
+    public void Awake()
+    {
+        directionDebugger = GameObject.CreatePrimitive(PrimitiveType.Sphere);
     }
 }

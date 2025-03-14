@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6531796090135112500}
   - component: {fileID: 1581655004928551491}
   m_Layer: 0
-  m_Name: Dagger
+  m_Name: PesticideSpray
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

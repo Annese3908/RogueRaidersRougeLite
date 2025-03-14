@@ -15,4 +15,6 @@ MonoBehaviour:
   maxHealth: 6
   moveSpeed: 5
   playerLives: 3
-  ammo: 20
+  maxAmmo: 12
+  buckets: 3
+  waterPerBucket: 12
