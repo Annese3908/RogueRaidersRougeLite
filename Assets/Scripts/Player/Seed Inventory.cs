@@ -7,34 +7,37 @@ public class SeedInventory : MonoBehaviour
 {
     private SeedPacket[] packets = new SeedPacket[3];
 
-    public void DebugLogPackets()
-    {
-        for (int i = 0; i < packets.Length; i++)
-        {
-            Debug.Log("Packet " + i + ": Seeds - " + packets[i].type + ", State - " + packets[i].state);
-        }
-    }
-
     public void DebugGivePackets()
     {
-
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            CollectSeeds(SeedType.GoldenApple);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            CollectSeeds(SeedType.SplitPea);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            CollectSeeds(SeedType.SugarCane);
+        }
     }
 
     public void AdvancePacket(int packet)
     {
         packets[packet].state++;
 
-        DebugLogPackets();
+        Debug.Log("Packet " + packet + ": is " + packets[packet].state);
     }
 
     public void CollectSeeds(SeedType type)
     {
+        bool hasSeeds = FindPacket(type) > -1;
         int packet = FindPacket(PacketState.Empty);
 
-        if (packet > -1)
+        if (packet > -1 & !hasSeeds)
         {
             packets[packet].type = type;
-
             AdvancePacket(packet);
         }
     }
@@ -51,11 +54,11 @@ public class SeedInventory : MonoBehaviour
         return -1;
     }
 
-    public int FindPacket(PacketState seedState)
+    public int FindPacket(PacketState packetState)
     {
         for (int i = 0; i < packets.Length; i++)
         {
-            if (packets[i].state == seedState)
+            if (packets[i].state == packetState)
                 return i;
         }
 
@@ -79,5 +82,10 @@ public class SeedInventory : MonoBehaviour
         {
             packets[i] = new SeedPacket(SeedType.none, PacketState.Empty);
         }
+    }
+
+    public void Update()
+    {
+        DebugGivePackets();
     }
 }

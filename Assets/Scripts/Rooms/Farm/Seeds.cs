@@ -19,7 +19,8 @@ namespace Seeds
     {
         Empty,
         Planted,
-        Grown
+        Grown,
+        Harvested
     }
 
     public class SeedPacket
