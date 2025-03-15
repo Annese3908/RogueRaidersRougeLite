@@ -10,6 +10,9 @@ abstract public class InteractableObject : MonoBehaviour, Interactable
     protected bool isTarget;
     protected bool isInteractable;
 
+    [HideInInspector]
+    public bool interacted;
+
     public abstract void Interact();
 
     public void Target(bool targeted)

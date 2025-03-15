@@ -69,10 +69,8 @@ public class PlayerStats : MonoBehaviour
 
     public void SpendBucket()
     {
-        Debug.Log("Bucket had been spent");
         if (currWater >= playerData.WaterPerBucket)
             currWater -= playerData.WaterPerBucket;
-        Debug.Log("Remaining water: " + currWater);
     }
 
     public int FilledBuckets()

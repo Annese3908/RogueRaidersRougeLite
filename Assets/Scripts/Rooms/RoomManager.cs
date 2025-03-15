@@ -15,19 +15,29 @@ public class RoomManager : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
+    private void Update()
+    {
+        DebugClear();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !roomLocked && !roomCleared)
         {
+            Debug.Log("Player has entered " + gameObject.name);
             roomLocked = true;
-            roomCollider.enabled = true;
 
             // Start spawning enemies
             foreach (var spawner in enemySpawners)
             {
-                spawner.StartSpawning();
+                //spawner.StartSpawning();
             }
         }
+    }
+
+    public bool IsReadyToUnlock()
+    {
+        return roomLocked & roomCleared;
     }
 
     // Call this method when all enemies in the room are defeated
@@ -37,5 +47,14 @@ public class RoomManager : MonoBehaviour
         roomLocked = false;
         roomCleared = true;
         gameManager.RoomCleared();
+    }
+
+    private void DebugClear()
+    {
+        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            Debug.Log(gameObject.name + " is cleared");
+            roomCleared = true;
+        }
     }
 }

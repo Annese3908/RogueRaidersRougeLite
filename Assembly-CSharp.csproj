@@ -76,11 +76,13 @@
     <Compile Include="Assets\Scripts\Enemy\GrubController.cs" />
     <Compile Include="Assets\Scripts\Rooms\Interactable.cs" />
     <Compile Include="Assets\Scripts\Rooms\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Rooms\Fruit Tree.cs" />
     <Compile Include="Assets\Scripts\Rooms\InteractableObject.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\Weapons\DaggerController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimator.cs" />
+    <Compile Include="Assets\Scripts\Rooms\FruitTreeData.cs" />
     <Compile Include="Assets\Scripts\Rooms\RoomManager.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\Farm.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\AmmoItem.cs" />

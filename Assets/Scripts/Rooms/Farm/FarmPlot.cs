@@ -16,14 +16,10 @@ public class FarmPlot : InteractableObject
     public PlotState state;
     public SeedType seedType = SeedType.none;
 
-    public bool interacted;
-
     public void AdvancePlot()
     {
         state++;
         isInteractable = false;
-
-        Debug.Log(gameObject.name + " is " + state);
 
     }
 
@@ -80,8 +76,6 @@ public class FarmPlot : InteractableObject
     public override void Interact()
     {
         interacted = true;
-
-        Debug.Log(gameObject.name + " (" + state + ") was interacted with");
     }
 
     private void Awake()
