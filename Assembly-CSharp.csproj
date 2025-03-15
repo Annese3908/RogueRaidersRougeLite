@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Rooms\Farm\AmmoItem.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\Weapons\AntShotController.cs" />
+    <Compile Include="Assets\Scripts\Rooms\RoomDivider.cs" />
     <Compile Include="Assets\Scripts\Weapons\ProjectileBehavior.cs" />
     <Compile Include="Assets\Scripts\Rooms\Farm\ShopItem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />

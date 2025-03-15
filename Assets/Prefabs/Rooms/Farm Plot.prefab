@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 3, z: 1}
+  m_LocalScale: {x: 7, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1386917309907068424}
@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptSprite: {fileID: 1956754886965984542}
+  interacted: 0
   plotPromptSprite: {fileID: 4396456800218082029}
   plantSprite: {fileID: 4157285381219562485}
   prompts:
@@ -318,7 +319,6 @@ MonoBehaviour:
   - {fileID: 0}
   state: 0
   seedType: 0
-  interacted: 0
 --- !u!61 &6093431283814860503
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class RoomManager : MonoBehaviour
 {
     public Collider2D roomCollider;
     public EnemySpawner[] enemySpawners;
+    public RoomDivider[] roomDividers;
     private bool roomLocked = false;
     private bool roomCleared = false;
     private GameManager gameManager;
@@ -18,6 +19,7 @@ public class RoomManager : MonoBehaviour
     private void Update()
     {
         DebugClear();
+        DebugUnlock();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -25,13 +27,23 @@ public class RoomManager : MonoBehaviour
         if (other.CompareTag("Player") && !roomLocked && !roomCleared)
         {
             Debug.Log("Player has entered " + gameObject.name);
-            roomLocked = true;
+            LockRoom();
+        }
+    }
 
-            // Start spawning enemies
-            foreach (var spawner in enemySpawners)
-            {
-                //spawner.StartSpawning();
-            }
+    public void LockRoom()
+    {
+        roomLocked = true;
+
+        for (int i = 0; i < roomDividers.Length; i++)
+        {
+            roomDividers[i].Toggle(true);
+        }
+
+        // Start spawning enemies
+        foreach (var spawner in enemySpawners)
+        {
+            //spawner.StartSpawning();
         }
     }
 
@@ -43,6 +55,11 @@ public class RoomManager : MonoBehaviour
     // Call this method when all enemies in the room are defeated
     public void UnlockRoom()
     {
+        for (int i = 0; i < roomDividers.Length; i++)
+        {
+            roomDividers[i].Toggle(false);
+        }
+
         roomCollider.enabled = false;
         roomLocked = false;
         roomCleared = true;
@@ -55,6 +72,15 @@ public class RoomManager : MonoBehaviour
         {
             Debug.Log(gameObject.name + " is cleared");
             roomCleared = true;
+        }
+    }
+
+    private void DebugUnlock()
+    {
+        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha9))
+        {
+            Debug.Log(gameObject.name + " is unlocked");
+            UnlockRoom();
         }
     }
 }
