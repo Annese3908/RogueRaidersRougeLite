@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a8c6cf1a6a232448c9877c9a0ea84590
+guid: cb8979f8f4fee4862b53765806edaf65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -110,343 +110,112 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Remade tiles_0
+      name: Fence_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2800
+        y: 1200
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee031b33b811469cb265248dbad84a5
-      internalID: 828461128
+      spriteID: 63bf4cd8fdc1c4e578b570a96b8c9616
+      internalID: -402367148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Remade tiles_1
+      name: Fence_1
       rect:
         serializedVersion: 2
         x: 400
-        y: 2800
+        y: 1200
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b760959c347c42dc8721ac3de60384f
-      internalID: 1272397257
+      spriteID: 00d3e9faf39ba4b6d9abe2b6d59d7826
+      internalID: 1360502539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Remade tiles_2
+      name: Fence_2
       rect:
         serializedVersion: 2
         x: 800
-        y: 2800
+        y: 1200
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3689b8718cd674d90b9a6e84dbb149fe
-      internalID: -493344342
+      spriteID: 3a69f396a73354b75aebc82cde83e908
+      internalID: 592703329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Remade tiles_3
+      name: Fence_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1200
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb19b1367c8544ef9203d1c6043b7da
+      internalID: -752752776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 2400
+        y: 800
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e3284b1e0cc4cbe86791a5811302d8
-      internalID: 353537224
+      spriteID: 83f1facb43bf9454daeaf9be5a97ea76
+      internalID: -1682941128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Remade tiles_4
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 2400
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85842ae4526f44beb88494c248997537
-      internalID: -1172608114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_5
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 2400
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8156fb4d45636410e98d8080674869f7
-      internalID: -996989684
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Soil
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 1200
-        height: 1200
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56f101529737d4276b42e4a9d3f930ef
-      internalID: 1447862731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_7
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 2000
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65864ce2edb4a4149ad5b13bf278ea9a
-      internalID: 86078394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_8
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 2000
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63adbd74130d64da7b8b5f3c2ca9cd5c
-      internalID: -1905399002
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_9
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1600
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c077b8a4dd4b9449c85b49a5d729061d
-      internalID: -1568419152
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_10
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 1600
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11023fdb69b404540a45270fb0c10a75
-      internalID: -1277595864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_11
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 1600
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 22e00b59c743a4d6bab91f8fad003dcc
-      internalID: 1509652795
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_12
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 1200
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 57299042a99ef47de8e38a334ebc27aa
-      internalID: 1336273673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_13
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 1200
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5415a3870e8294cb7a76dcc3a062bf30
-      internalID: -713427000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_14
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 1200
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7696e10ea86744ad8ab3e2a38575e71
-      internalID: 155910931
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_15
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 1200
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab063f1f8bac647a6ae48ab0e10ddd3f
-      internalID: -402832758
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Remade tiles_16
+      name: Fence_5
       rect:
         serializedVersion: 2
         x: 400
@@ -454,20 +223,83 @@ TextureImporter:
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98fb5db5ca4ee4eac90b6be9774b7420
-      internalID: 213570994
+      spriteID: 4e56b6f97da724fea9f89a3131e8e280
+      internalID: -1269399606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Remade tiles_17
+      name: Fence_6
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b6e18a20db04651a4730b027aa6dd0
+      internalID: 160782729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_7
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a1437107a664af3a0f715e6c5a7df9
+      internalID: 1581084660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a557f31c934046cbb1d1245ce2221ac
+      internalID: -2049637140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_9
       rect:
         serializedVersion: 2
         x: 400
@@ -475,14 +307,140 @@ TextureImporter:
         width: 400
         height: 400
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0e91c2c367424436bb411fbf5c222b7
-      internalID: -2125774917
+      spriteID: 125e1ca13acee4d9c9b7e13a7fca7bff
+      internalID: -629529003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0382417323948a8913ff72d1a0820c
+      internalID: 1325854499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_11
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5539ef153f5a94b718b68027046e7ec5
+      internalID: 201011519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6acb44a7cf59409890445a2aefe7c65
+      internalID: 1611718735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0123d355a491749118033228ef6ab50b
+      internalID: -787964087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a850b3fbee643d9b65226891051fef
+      internalID: 1123844835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fence_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0503f9388ea4719a8ddb13a45a6ccf
+      internalID: -1648407382
       vertices: []
       indices: 
       edges: []
@@ -498,24 +456,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Remade tiles_0: 828461128
-      Remade tiles_1: 1272397257
-      Remade tiles_10: -1277595864
-      Remade tiles_11: 1509652795
-      Remade tiles_12: 1336273673
-      Remade tiles_13: -713427000
-      Remade tiles_14: 155910931
-      Remade tiles_15: -402832758
-      Remade tiles_16: 213570994
-      Remade tiles_17: -2125774917
-      Remade tiles_2: -493344342
-      Remade tiles_3: 353537224
-      Remade tiles_4: -1172608114
-      Remade tiles_5: -996989684
-      Remade tiles_7: 86078394
-      Remade tiles_8: -1905399002
-      Remade tiles_9: -1568419152
-      Soil: 1447862731
+      Fence_0: -402367148
+      Fence_1: 1360502539
+      Fence_10: 1325854499
+      Fence_11: 201011519
+      Fence_12: 1611718735
+      Fence_13: -787964087
+      Fence_14: 1123844835
+      Fence_15: -1648407382
+      Fence_2: 592703329
+      Fence_3: -752752776
+      Fence_4: -1682941128
+      Fence_5: -1269399606
+      Fence_6: 160782729
+      Fence_7: 1581084660
+      Fence_8: -2049637140
+      Fence_9: -629529003
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
