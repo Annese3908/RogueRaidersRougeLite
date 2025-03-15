@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 3442024394998656042}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptSprite: {fileID: 655267152988365384}
+  interacted: 0
   waterSprite: {fileID: 2203004354356817681}
   player: {fileID: 0}
 --- !u!61 &3073147650402605244
@@ -458,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 5895425570585630584}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -645,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptSprite: {fileID: 1518903546137767499}
+  interacted: 0
   waterSprite: {fileID: 8414849193206600435}
   player: {fileID: 0}
 --- !u!61 &4902068054249969690
