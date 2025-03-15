@@ -19,17 +19,18 @@ public class DaggerController : WeaponController
     // Update is called once per frame
     protected override void Attack()
     {
-        if(Input.GetMouseButtonDown(0)){
-            base.Attack();
-            StartCoroutine(ShootDagger());
-        }
+        base.Attack();
+        StartCoroutine(ShootDagger());
     }
     IEnumerator ShootDagger(){
         for(int i = 0; i < projAmnt; i++){
             GameObject spawnedDagger = Instantiate(weaponData.Prefab);
             spawnedDagger.transform.position = transform.position; // assign position of dagger to be same as player
-            spawnedDagger.GetComponent<DaggerBehavior>().DirectionCheck(pm.lastMovedVector);
-            yield return new WaitForSeconds(0.4f);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Get direction of mouse click
+            mousePosition.z = 0; // Ensure the z-coordinate is zero for 2D
+            Vector3 direction = (mousePosition - transform.position).normalized;
+            spawnedDagger.GetComponent<DaggerBehavior>().DirectionCheck(direction);
+            yield return new WaitForSeconds(0.3f);
         }
     }
 }
