@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3207310101705743333}
   - component: {fileID: 3091681907241804763}
-  - component: {fileID: 6242322627409815577}
   - component: {fileID: 2933099626566279399}
   - component: {fileID: 3122211431599362642}
   - component: {fileID: 3832330157470720739}
@@ -21,6 +20,7 @@ GameObject:
   - component: {fileID: 4393055447123063385}
   - component: {fileID: 8919373752877196548}
   - component: {fileID: 7997954145045658483}
+  - component: {fileID: 6473364976434073642}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -96,27 +96,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6242322627409815577
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125579836168070905}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c5642dbf83cc0459b86b38a91f94ccfd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &2933099626566279399
 Rigidbody2D:
   serializedVersion: 4
@@ -315,6 +294,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
+--- !u!95 &6473364976434073642
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5125579836168070905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8a79cfd1d8c0342739e2e8ee97e2678a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6248001110387873879
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,3 +360,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData: {fileID: 11400000, guid: 8b7f55810646b4cf9af2d7dc493f1257, type: 2}
+  playerData: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
