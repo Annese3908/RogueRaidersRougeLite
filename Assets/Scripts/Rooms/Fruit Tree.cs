@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Seeds;
+using Plants;
 
 public class FruitTree : InteractableObject
 {
@@ -12,13 +12,13 @@ public class FruitTree : InteractableObject
     [SerializeField]
     private SeedInventory seedPackets;
     [SerializeField]
-    private FruitTreeData data;
+    private PlantData data;
 
     public override void Interact()
     {
         if (isInteractable)
         {
-            seedPackets.CollectSeeds(data.Fruit);
+            seedPackets.CollectSeeds(data.Type);
             room.UnlockRoom();
         }
     }
@@ -32,6 +32,6 @@ public class FruitTree : InteractableObject
 
     public void Awake()
     {
-        treeSprite.sprite = data.PlantSprite;
+        treeSprite.sprite = data.TreeSprite;
     }
 }

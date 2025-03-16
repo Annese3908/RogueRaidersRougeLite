@@ -1,6 +1,6 @@
-namespace Seeds
+namespace Plants
 {
-    public enum SeedType
+    public enum PlantType
     {
         none,
         GoldenApple,
@@ -25,10 +25,10 @@ namespace Seeds
 
     public class SeedPacket
     {
-        public SeedType type;
+        public PlantType type;
         public PacketState state;
 
-        public SeedPacket(SeedType seedType, PacketState packetState)
+        public SeedPacket(PlantType seedType, PacketState packetState)
         {
             type = seedType;
             state = packetState;

@@ -1,4 +1,4 @@
-using Seeds;
+using Plants;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.Intrinsics;
@@ -73,7 +73,7 @@ public class Farm : MonoBehaviour
 
                 case PlotState.Grown:
                     //find the packet with the same seed type as plot
-                    int packetToHarvest = playersSeeds.FindPacket(plots[i].seedType);
+                    int packetToHarvest = playersSeeds.FindPacket(plots[i].plantData.Type);
 
                     //exit function if packet cant be found
                     if (packetToHarvest < 0)

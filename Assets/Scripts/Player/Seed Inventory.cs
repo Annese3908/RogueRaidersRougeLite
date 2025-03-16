@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Seeds;
+using Plants;
 
 public class SeedInventory : MonoBehaviour
 {
     private SeedPacket[] packets = new SeedPacket[3];
+    private PlantData[] plantData = new PlantData[3];
 
     public void DebugGivePackets()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            CollectSeeds(SeedType.GoldenApple);
+            CollectSeeds(PlantType.GoldenApple);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            CollectSeeds(SeedType.SplitPea);
+            CollectSeeds(PlantType.SplitPea);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            CollectSeeds(SeedType.SugarCane);
+            CollectSeeds(PlantType.SugarCane);
         }
     }
 
@@ -30,7 +31,7 @@ public class SeedInventory : MonoBehaviour
         //Debug.Log("Packet " + packet + ": is " + packets[packet].state);
     }
 
-    public void CollectSeeds(SeedType type)
+    public void CollectSeeds(PlantType type)
     {
         bool hasSeeds = FindPacket(type) > -1;
         int packet = FindPacket(PacketState.Empty);
@@ -43,7 +44,7 @@ public class SeedInventory : MonoBehaviour
         }
     }
 
-    public int FindPacket(SeedType seedType)
+    public int FindPacket(PlantType seedType)
     {
         for (int i = 0; i < packets.Length; i++)
         {
@@ -72,16 +73,16 @@ public class SeedInventory : MonoBehaviour
         return packets[packet].state;
     }
 
-    public SeedType GetSeeds(int packet)
+    public PlantData GetSeeds(int packet)
     {
-        return packets[packet].type;
+        return plantData[(int)packets[packet].type];
     }
 
     public void Start()
     {
         for (int i = 0; i < packets.Length; i++)
         {
-            packets[i] = new SeedPacket(SeedType.none, PacketState.Empty);
+            packets[i] = new SeedPacket(PlantType.none, PacketState.Empty);
         }
     }
 

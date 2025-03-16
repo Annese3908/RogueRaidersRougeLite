@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Seeds;
+using Plants;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEditor.IMGUI.Controls;
@@ -11,10 +11,12 @@ public class FarmPlot : InteractableObject
     [SerializeField]
     private SpriteRenderer plotPromptSprite, plantSprite;
     [SerializeField]
-    private Sprite[] prompts, plants, seeds;
+    private Sprite[] prompts;
 
+    [HideInInspector]
     public PlotState state;
-    public SeedType seedType = SeedType.none;
+    [HideInInspector]
+    public PlantData plantData;
 
     public void AdvancePlot()
     {
@@ -23,13 +25,13 @@ public class FarmPlot : InteractableObject
 
     }
 
-    public void PlantSeeds(SeedType seedsToPlant)
+    public void PlantSeeds(PlantData plant)
     {
         //plant seed if plot is empty
         if (state != PlotState.Empty)
             return;
 
-        seedType = seedsToPlant;
+        plantData = plant;
         AdvancePlot();
     }
 
@@ -47,21 +49,21 @@ public class FarmPlot : InteractableObject
     {
         switch (state)
         {
-            //plant sprite should not show is plot is empty
             case PlotState.Empty:
+                //disable plant sprite
                 plantSprite.enabled = false;
                 break;
 
-            //plant sprite should be the seed of the correct type
             case PlotState.Planted:
+                //set plant sprite to planted seeds sprite
                 plantSprite.enabled = true;
-                plantSprite.sprite = seeds[(int)seedType - 1];
+                plantSprite.sprite = plantData.PlantedSeedSprite;
                 break;
 
-            //plant sprite should be the plant of the correct type
             case PlotState.Grown:
+                //set plant sprite to tree sprite
                 plantSprite.enabled = true;
-                plantSprite.sprite = plants[(int)seedType - 1];
+                plantSprite.sprite = plantData.TreeSprite;
                 break;
         }
     }
