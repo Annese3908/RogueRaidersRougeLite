@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sugar Cane
   m_EditorClassIdentifier: 
   type: 3
-  treeSprite: {fileID: 0}
+  treeSprite: {fileID: 21300000, guid: 60d8f8ab87c4a17408af3754d5681c4c, type: 3}
   seedSprite: {fileID: 21300000, guid: 055973aaa86bed442aa3eee55ad6b11c, type: 3}
-  plantedSeedSprite: {fileID: 0}
+  plantedSeedSprite: {fileID: 21300000, guid: 3b79c3da18178ca4bbaf8304bea3c795, type: 3}
   cropSprite: {fileID: 21300000, guid: 130114facc4ec2d4f8e8a2d6cd83ccd0, type: 3}
