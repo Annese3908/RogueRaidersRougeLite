@@ -6,6 +6,7 @@ using Plants;
 public class SeedInventory : MonoBehaviour
 {
     private SeedPacket[] packets = new SeedPacket[3];
+    [SerializeField]
     private PlantData[] plantData = new PlantData[3];
 
     public void DebugGivePackets()
