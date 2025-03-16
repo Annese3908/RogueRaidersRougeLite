@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95da7bd6ad233b4e9e6c8ea3ed84133, type: 3}
   m_Name: Split Pea
   m_EditorClassIdentifier: 
-  fruit: 2
-  plantSprite: {fileID: 0}
-  seedSprite: {fileID: 0}
-  cropSprite: {fileID: 0}
+  type: 2
+  treeSprite: {fileID: 0}
+  seedSprite: {fileID: 21300000, guid: 92aec9359e1d2544fa5b94abffca7278, type: 3}
+  plantedSeedSprite: {fileID: 0}
+  cropSprite: {fileID: 21300000, guid: 7deea558cee7a99478ed2dfd9713fc66, type: 3}

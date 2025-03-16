@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95da7bd6ad233b4e9e6c8ea3ed84133, type: 3}
   m_Name: Sugar Cane
   m_EditorClassIdentifier: 
-  fruit: 3
-  plantSprite: {fileID: 0}
-  seedSprite: {fileID: 0}
-  cropSprite: {fileID: 0}
+  type: 3
+  treeSprite: {fileID: 0}
+  seedSprite: {fileID: 21300000, guid: 055973aaa86bed442aa3eee55ad6b11c, type: 3}
+  plantedSeedSprite: {fileID: 0}
+  cropSprite: {fileID: 21300000, guid: 130114facc4ec2d4f8e8a2d6cd83ccd0, type: 3}

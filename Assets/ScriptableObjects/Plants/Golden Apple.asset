@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e95da7bd6ad233b4e9e6c8ea3ed84133, type: 3}
   m_Name: Golden Apple
   m_EditorClassIdentifier: 
-  fruit: 1
-  plantSprite: {fileID: 213570994, guid: a8c6cf1a6a232448c9877c9a0ea84590, type: 3}
-  seedSprite: {fileID: 0}
+  type: 1
+  treeSprite: {fileID: 0}
+  seedSprite: {fileID: 21300000, guid: 5f93d0792f3c59b448a32a221f49277c, type: 3}
+  plantedSeedSprite: {fileID: 0}
   cropSprite: {fileID: 21300000, guid: dd7d4bca37565f344acca500b764bde0, type: 3}
