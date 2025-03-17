@@ -65,6 +65,11 @@ public class PlayerStats : MonoBehaviour
     public void CollectWater(int amount)
     {
         currWater += amount;
+
+        if (currWater > playerData.MaxWater)
+        {
+            currAmmo = playerData.MaxWater;
+        }
     }
 
     public void SpendBucket()

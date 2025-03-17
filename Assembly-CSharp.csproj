@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\Weapons\WeaponController.cs" />
+    <Compile Include="Assets\Scripts\Player\Magic Water.cs" />
     <Compile Include="Assets\Scripts\Player\Interact.cs" />
     <Compile Include="Assets\Scripts\Enemy\GrubController.cs" />
     <Compile Include="Assets\Scripts\Rooms\Interactable.cs" />
