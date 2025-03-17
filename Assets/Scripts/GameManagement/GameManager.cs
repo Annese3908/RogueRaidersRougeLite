@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        youLosePopup.SetActive(false);
+        youWinPopup.SetActive(false);
         //boss.SetActive(false);
         playerStats = FindObjectOfType<PlayerStats>();
 
