@@ -33,7 +33,7 @@ public class PlayerAnimator : MonoBehaviour
     }
     IEnumerator ResetAttackAfterDelay()
     {
-        yield return new WaitForSeconds(0.85f); // Wait for the attack duration
+        yield return new WaitForSeconds(0.843f); // Wait for the attack duration
         am.SetBool("Attack", false);
     }
 
