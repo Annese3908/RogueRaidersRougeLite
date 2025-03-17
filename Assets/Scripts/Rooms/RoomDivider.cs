@@ -10,6 +10,8 @@ public class RoomDivider : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Collider2D barrier;
+    [SerializeField]
+    private AudioSource audioPlayer;
 
 
 
@@ -18,10 +20,14 @@ public class RoomDivider : MonoBehaviour
         barrier.enabled = open;
 
         animator.SetBool("Grow", open);
+
+        audioPlayer.Play();
     }
 
     private void Awake()
     {
-        Toggle(false);
+        barrier.enabled = false;
+
+        animator.SetBool("Grow", false);
     }
 }
