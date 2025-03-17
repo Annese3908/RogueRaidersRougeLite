@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class HeartScript : MonoBehaviour
+{
+   
+    public  GameObject Panel;
+    public Sprite FullHeart;
+    public Sprite HalfHeart;
+    public Sprite EmptyHeart;
+     public Player player; // Assign this in the Inspector
+
+    public void DrawHeart(Sprite Type, int num)
+{
+    GameObject Heart = new GameObject("Heart");
+    Image HeartImage = Heart.AddComponent<Image>();
+    HeartImage.sprite = Type;
+    RectTransform rectTransform = Heart.GetComponent<RectTransform>();
+    rectTransform.sizeDelta = new Vector2(Panel.GetComponent<RectTransform>().sizeDelta.x / 10, Panel.GetComponent<RectTransform>().sizeDelta.y / 10);
+
+
+
+    float XPos = 0;
+    float YPos = -5;
+
+    if (num <= 4)
+    {
+        XPos = num * Panel.GetComponent<RectTransform>().sizeDelta.x / 10;
+    }
+    else
+    {
+        XPos = (num - 5) * Panel.GetComponent<RectTransform>().sizeDelta.x / 10;
+        YPos = -5 - Panel.GetComponent<RectTransform>().sizeDelta.x / 10;
+    }
+
+    rectTransform.position = new Vector2(XPos, YPos);
+    rectTransform.pivot = new Vector2(0, 1);
+    rectTransform.anchorMin = new Vector2(0, 1);
+    rectTransform.anchorMax = new Vector2(0, 1);
+    HeartImage.transform.SetParent(Panel.transform, false);
+
+}
+    public void DrawHeart()
+    {
+        for(int i = 0; i < player.MaxHealth - 1; i++)
+        {
+            DrawHeart(FullHeart, i);
+        }
+
+        if(player.MaxHealth % 1 == 0)
+        {
+            DrawHeart(HalfHeart, (int)player.MaxHealth);
+        }
+
+        for(int i = (int)player.MaxHealth-1; i <= 10; ++i)
+        {
+            DrawHeart(EmptyHeart, (int)i);
+        }
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        DrawHeart();
+    }
+}
+

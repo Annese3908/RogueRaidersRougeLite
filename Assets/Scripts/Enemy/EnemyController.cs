@@ -28,14 +28,19 @@ public class EnemyController : MonoBehaviour
    protected virtual void Attack(){
         currCooldown = 3f;
    }
-   protected virtual void OnTriggerEnter2D(Collider2D col){
-
-        // hit player upon collision
-        if(currCooldown <= 0f){
-            if(col.CompareTag("Player")){
+    protected virtual void OnTriggerEnter2D(Collider2D col)
+    {
+        if (currCooldown <= 0f)
+        {
+            if (col.CompareTag("Player"))
+            {
                 PlayerStats player = col.GetComponent<PlayerStats>();
-                player.TakeDamage(currDamage); //must stay currDamage in case of buffs
+                if (player != null)
+                {
+                    player.TakeDamage(currDamage); // Apply damage to the player
+                }
             }
         }
     }
 }
+
