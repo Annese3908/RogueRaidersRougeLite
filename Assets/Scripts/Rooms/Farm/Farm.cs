@@ -38,6 +38,9 @@ public class Farm : MonoBehaviour
                 case PlotState.Grown:
                     plots[i].SetReadiness(true);
                     break;
+                case PlotState.Harvested:
+                    plots[i].SetReadiness(false);
+                    break;
             }
         }
     }
@@ -86,9 +89,6 @@ public class Farm : MonoBehaviour
                     plots[i].AdvancePlot();
                     break;
             }
-
-            //reset interaction
-            plots[i].interacted = false;
             ReadyPlots();
         }
     }
@@ -108,7 +108,7 @@ public class Farm : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player has entered farm");
+            //Debug.Log("Player has entered farm");
             playerInFarm = true;
             ReadyPlots();
         }
@@ -121,7 +121,7 @@ public class Farm : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player has exited farm");
+            //Debug.Log("Player has exited farm");
             playerInFarm = false;
         }
     }
