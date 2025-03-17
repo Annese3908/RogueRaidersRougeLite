@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     }
     protected virtual void Start()
     {
-        currCooldown = 3f;
+        currCooldown = 0.45f;
     }
     // Update is called once per frame
     protected virtual void Update()
@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour
         }
     }
    protected virtual void Attack(){
-        currCooldown = 3f;
+        currCooldown = 0.45f;
    }
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {

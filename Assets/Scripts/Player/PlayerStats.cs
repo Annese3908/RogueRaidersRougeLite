@@ -79,10 +79,11 @@ public class PlayerStats : MonoBehaviour
     {
         return currHealth == playerData.MaxHealth;
     }
-    public int Health()
+    public float GetHealth()
     {
-        return (int)currHealth;
+        return currHealth; // Return float value instead of int
     }
+
 
     public void RefillAmmo()
     {

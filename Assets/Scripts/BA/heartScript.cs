@@ -5,112 +5,89 @@ using UnityEngine.UI; // Import UI library for handling heart images
 
 public class HeartScript : MonoBehaviour
 {
-    // UI panel where the hearts will be displayed
-    public GameObject Panel;
-
-    // Sprites representing different heart states (Full, Half, Empty)
+    public GameObject Panel; // UI Panel where hearts are displayed
     public Sprite FullHeart;
     public Sprite HalfHeart;
     public Sprite EmptyHeart;
 
-    // Reference to PlayerStats, which stores the player's current health
-    public PlayerStats playerStats;
+    public PlayerStats playerStats; // Reference to PlayerStats
 
-    /// <summary>
-    /// Unity Start() function - Initializes health display and ensures PlayerStats is assigned.
-    /// </summary>
     void Start()
     {
-        // If playerStats is not assigned in the Inspector, try to find it dynamically
-        if (playerStats == null) 
+        if (playerStats == null)
         {
             playerStats = FindObjectOfType<PlayerStats>();
         }
 
-        // Check if playerStats was successfully found or assigned
-        if (playerStats == null) 
+        if (playerStats == null)
         {
-            Debug.LogError("HeartScript: PlayerStats reference is NULL! Make sure it is assigned in the Inspector.");
-            return; // Stop execution to prevent errors
+            Debug.LogError("HeartScript: PlayerStats reference is NULL! Make sure it is assigned.");
+            return;
         }
 
-        // Initialize heart display
-        DrawHeart();
+        DrawHeart(); // Initialize UI
     }
 
-    /// <summary>
-    /// Creates and positions a heart UI element in the panel.
-    /// </summary>
-    /// <param name="Type">The sprite (Full, Half, Empty) to display</param>
-    /// <param name="num">Position index of the heart</param>
-    public void DrawHeart(Sprite Type, int num)
-    {
-        // Create a new UI GameObject for the heart
-        GameObject Heart = new GameObject("Heart");
-
-        // Add an Image component to display the heart sprite
-        Image HeartImage = Heart.AddComponent<Image>();
-        HeartImage.sprite = Type; // Set the sprite to the provided heart type
-
-        // Get RectTransform for positioning and sizing in UI
-        RectTransform rectTransform = Heart.GetComponent<RectTransform>();
-
-        // Scale the heart size based on the panel dimensions (divide by 4 to keep within one row)
-        rectTransform.sizeDelta = new Vector2(Panel.GetComponent<RectTransform>().sizeDelta.x / 4, 
-                                              Panel.GetComponent<RectTransform>().sizeDelta.y / 10);
-
-        // Ensure all hearts are placed in a single row
-        float XPos = num * (Panel.GetComponent<RectTransform>().sizeDelta.x / 4); // Space them evenly
-        float YPos = 0; // Keep Y-position constant to prevent multiple rows
-
-        // Set the position and anchoring for the heart image
-        rectTransform.position = new Vector2(XPos, YPos);
-        rectTransform.pivot = new Vector2(0, 1);
-        rectTransform.anchorMin = new Vector2(0, 1);
-        rectTransform.anchorMax = new Vector2(0, 1);
-
-        // Attach the heart object to the UI Panel
-        HeartImage.transform.SetParent(Panel.transform, false);
-    }
-
-    /// <summary>
-    /// Draws the hearts UI according to the player's current health.
-    /// </summary>
     public void DrawHeart()
     {
-        // Ensure playerStats is assigned before updating UI
-        if (playerStats == null) 
+        if (playerStats == null)
         {
             Debug.LogError("HeartScript: Cannot update hearts because PlayerStats is NULL!");
             return;
         }
 
-        // Clear previous hearts from the panel before redrawing
+        // Clear previous hearts from the UI before redrawing
         foreach (Transform child in Panel.transform)
         {
             Destroy(child.gameObject);
         }
 
-        // Get the current health of the player
-        int currentHealth = playerStats.Health();
-        int maxHearts = 4; // Restrict max hearts to 4
+        float currentHealth = playerStats.GetHealth(); // Get float health value
+        int maxHearts = 4; // Adjust based on UI design
 
-        // Draw full hearts for the current health (limit to 4 max)
-        for (int i = 0; i < Mathf.Min(currentHealth, maxHearts); i++)
+        int fullHearts = Mathf.FloorToInt(currentHealth); // Count full hearts
+        bool hasHalfHeart = (currentHealth % 1 != 0); // Check for half heart
+
+        // Draw full hearts
+        for (int i = 0; i < fullHearts; i++)
         {
-            DrawHeart(FullHeart, i);
+            CreateHeart(FullHeart, i);
         }
 
-        // If health is not a whole number (e.g., 2.5), draw a half heart (within limit)
-        if (currentHealth % 1 != 0 && currentHealth < maxHearts)
+        // Draw a half heart if needed
+        if (hasHalfHeart && fullHearts < maxHearts)
         {
-            DrawHeart(HalfHeart, (int)currentHealth);
+            CreateHeart(HalfHeart, fullHearts);
+            fullHearts++; // Increment index to prevent overlap with empty hearts
         }
 
-        // Fill remaining slots with empty hearts (up to 4 hearts total)
-        for (int i = currentHealth; i < maxHearts; i++)
+        // Draw empty hearts for remaining slots
+        for (int i = fullHearts; i < maxHearts; i++)
         {
-            DrawHeart(EmptyHeart, i);
+            CreateHeart(EmptyHeart, i);
         }
+    }
+
+    private void CreateHeart(Sprite heartType, int index)
+    {
+        GameObject Heart = new GameObject("Heart");
+
+        Image HeartImage = Heart.AddComponent<Image>();
+        HeartImage.sprite = heartType; // Assign sprite
+
+        RectTransform rectTransform = Heart.GetComponent<RectTransform>();
+        rectTransform.sizeDelta = new Vector2(Panel.GetComponent<RectTransform>().sizeDelta.x / 4,
+                                              Panel.GetComponent<RectTransform>().sizeDelta.y / 10);
+
+        // Positioning
+        float XPos = index * (Panel.GetComponent<RectTransform>().sizeDelta.x / 4);
+        float YPos = 0;
+
+        rectTransform.position = new Vector2(XPos, YPos);
+        rectTransform.pivot = new Vector2(0, 1);
+        rectTransform.anchorMin = new Vector2(0, 1);
+        rectTransform.anchorMax = new Vector2(0, 1);
+
+        HeartImage.transform.SetParent(Panel.transform, false);
     }
 }
