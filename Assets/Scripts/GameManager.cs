@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -9,12 +10,15 @@ public class GameManager : MonoBehaviour
     public GameObject youWinPopup;
     public GameObject youLosePopup;
     private GameObject[] rooms;
+
+    protected PlayerStats playerStats;
     private int clearedRooms = 0;
     private bool bossSpawned = false;
 
     void Start()
     {
         //boss.SetActive(false);
+        playerStats = FindObjectOfType<PlayerStats>();
 
         // Get all child objects of roomsParent and store them in the rooms array
         int childCount = roomsParent.transform.childCount;
@@ -40,13 +44,14 @@ public class GameManager : MonoBehaviour
     {
         if (clearedRooms >= 3 && !bossSpawned)
         {
-            //spawnBoss();
+            spawnBoss();
         }
     }
 
     void spawnBoss()
     {
-        boss.SetActive(true);
+        Instantiate(boss);
+        boss.transform.position = new Vector2(0f, 20f);
         bossSpawned = true;
     }
 
@@ -60,5 +65,14 @@ public class GameManager : MonoBehaviour
     {
         youLosePopup.SetActive(true);
         // add more code to allow player to restart game or exit game
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

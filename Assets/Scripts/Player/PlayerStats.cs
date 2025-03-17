@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     int currAmmo;
     int currWater;
     Transform respawnPoint;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour
         currLives = playerData.PlayerLives;
         currAmmo = playerData.MaxAmmo;
         respawnPoint.position = Vector3.zero;
+        gameManager = FindObjectOfType<GameManager>();
 
         startingStatsDebug();
     }
@@ -39,6 +41,7 @@ public class PlayerStats : MonoBehaviour
             Respawn();
         } else{
             // No lives left, destroy the player
+            gameManager.PlayerLose();
             Destroy(gameObject);
             Debug.Log("Game Over! No lives remaining.");
         }
