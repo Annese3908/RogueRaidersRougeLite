@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1254321808279448652, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_Name
-      value: Ant Queen Variant
+      value: AntQueen
       objectReference: {fileID: 0}
     - target: {fileID: 1254321808279448652, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1283446698689822712, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: enemyData

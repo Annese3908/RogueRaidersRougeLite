@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     public Enemy enemyData;
+    public GameObject dropPrefab;
     // Current Stats
     float currMoveSpeed;
     float currHealth;
     float currDamage;
+    float dropChance = 0.45f;
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +28,9 @@ public class EnemyStats : MonoBehaviour
         }
     }
     public void Kill(){
+        if (dropPrefab != null && Random.value <= dropChance){
+            Instantiate(dropPrefab, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

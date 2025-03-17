@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 3333043068253538295}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.11, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8551350141842618186}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0384510397b245c40b70f09ac00e556b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5644216553932734800}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   treeSprite: {fileID: 1348883551522861539}
   room: {fileID: 0}
   seedPackets: {fileID: 0}
-  data: {fileID: 11400000, guid: 32eed29c9a5c2484a8492699e400db26, type: 2}
+  data: {fileID: 11400000, guid: 17e01dad077b6c1408aa56fc2d73ee22, type: 2}
 --- !u!61 &1673946389548795198
 BoxCollider2D:
   m_ObjectHideFlags: 0
