@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        youLosePopup.SetActive(false);
+        youWinPopup.SetActive(false);
         //boss.SetActive(false);
         playerStats = FindObjectOfType<PlayerStats>();
 
@@ -54,6 +56,14 @@ public class GameManager : MonoBehaviour
         Instantiate(boss);
         boss.transform.position = new Vector2(0f, 20f);
         bossSpawned = true;
+
+        // Subscribe to the boss's death event
+        /*
+        if (spawnedBoss.TryGetComponent<EnemyStats>(out EnemyStats bossStats))
+        {
+            bossStats.onDeath += OnBossDeath;
+        }
+        */
     }
 
     public void PlayerWin()

@@ -10,6 +10,8 @@ public class RoomManager : MonoBehaviour
     private bool roomLocked = false;
     private bool roomCleared = false;
     private GameManager gameManager;
+    [SerializeField]
+    private AudioSource audioPlayer;
 
     void Start()
     {
@@ -38,6 +40,7 @@ public class RoomManager : MonoBehaviour
         for (int i = 0; i < roomDividers.Length; i++)
         {
             roomDividers[i].Toggle(true);
+            audioPlayer.Play();
         }
 
         // Start spawning enemies
@@ -64,20 +67,26 @@ public class RoomManager : MonoBehaviour
         roomLocked = false;
         roomCleared = true;
         gameManager.RoomCleared();
+        audioPlayer.Play();
+    }
+
+    public void SetRoomToClear()
+    {
+        roomCleared = true;
     }
 
     private void DebugClear()
     {
-        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha0))
+        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha9))
         {
             Debug.Log(gameObject.name + " is cleared");
-            roomCleared = true;
+            SetRoomToClear();
         }
     }
 
     private void DebugUnlock()
     {
-        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha9))
+        if (roomLocked & Input.GetKeyDown(KeyCode.Alpha0))
         {
             Debug.Log(gameObject.name + " is unlocked");
             UnlockRoom();

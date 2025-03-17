@@ -5,6 +5,7 @@ using Plants;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEditor.IMGUI.Controls;
+using UnityEngine.UIElements;
 
 public class FarmPlot : InteractableObject
 {
@@ -12,6 +13,10 @@ public class FarmPlot : InteractableObject
     private SpriteRenderer plotPromptSprite, plantSprite;
     [SerializeField]
     private Sprite[] prompts;
+    [SerializeField]
+    private AudioSource audioPlayer;
+    [SerializeField]
+    private AudioClip grow, harvest;
 
     public PlotState state;
     public PlantData plantData;
@@ -44,6 +49,21 @@ public class FarmPlot : InteractableObject
         isInteractable = ready;
         UpdatePromptSprite();
         UpdateCropSprite();
+    }
+
+    public void playSound()
+    {
+        switch (state)
+        {
+            case PlotState.Grown:
+                audioPlayer.clip = grow;
+                audioPlayer.Play();
+                break;
+            case PlotState.Harvested:
+                audioPlayer.clip = harvest;
+                audioPlayer.Play();
+                break;
+        }
     }
 
     public void UpdateCropSprite()

@@ -7,16 +7,23 @@ public class RoomDivider : MonoBehaviour
     [SerializeField]
     private SpriteRenderer sprite;
     [SerializeField]
+    private Animator animator;
+    [SerializeField]
     private Collider2D barrier;
+
+
 
     public void Toggle(bool open)
     {
-        sprite.enabled = open;
         barrier.enabled = open;
+
+        animator.SetBool("Grow", open);
     }
 
     private void Awake()
     {
-        Toggle(false);
+        barrier.enabled = false;
+
+        animator.SetBool("Grow", false);
     }
 }
