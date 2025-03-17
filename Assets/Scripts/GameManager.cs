@@ -55,10 +55,12 @@ public class GameManager : MonoBehaviour
         bossSpawned = true;
 
         // Subscribe to the boss's death event
+        /*
         if (spawnedBoss.TryGetComponent<EnemyStats>(out EnemyStats bossStats))
         {
             bossStats.onDeath += OnBossDeath;
         }
+        */
     }
 
     public void PlayerWin()

@@ -3972,7 +3972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 869600305488472028, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_TileColorArray.Array.data[1].m_RefCount
-      value: 1672
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 869600305488472028, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[0].m_RefCount
@@ -4290,6 +4290,10 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[15].m_RefCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2501807159967738560, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 5390347890203759255, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_Name
       value: Spawn
@@ -4336,7 +4340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489741865036999107, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489741865036999107, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[1].Array.size
@@ -4460,7 +4464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8489741865036999107, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8489741865036999107, guid: ee8f20016e128427fb8baefb9faec897, type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.data[0].Array.size
