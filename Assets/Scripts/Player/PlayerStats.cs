@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public Player playerData;
+    public AudioSource audioPlayer;
+    public AudioClip bite, spray, reload, bubble;
     // Current Stats
     float currMoveSpeed;
     float currHealth;
@@ -37,6 +39,8 @@ public class PlayerStats : MonoBehaviour
             Kill();
         }
         FindObjectOfType<HeartScript>().DrawHeart();
+        audioPlayer.clip = bite;
+        audioPlayer.Play();
     }
 
     public void Kill(){
@@ -73,35 +77,44 @@ public class PlayerStats : MonoBehaviour
     {
         Debug.Log("Health is Full");
         currHealth = playerData.MaxHealth;
+        audioPlayer.clip = bite;
+        audioPlayer.Play();
     }
 
     public bool AtFullHealth()
     {
         return currHealth == playerData.MaxHealth;
     }
-    public int Health()
+    public float GetHealth()
     {
-        return (int)currHealth;
+        return currHealth; // Return float value instead of int
     }
+
 
     public void RefillAmmo()
     {
         Debug.Log("Ammo is refilled");
         currAmmo = playerData.MaxAmmo;
+
+        audioPlayer.clip = reload;
+        audioPlayer.Play();
     }
 
     public void UseAmmo(int amount)
     {
         currAmmo -= amount;
+
+        audioPlayer.clip = spray;
+        audioPlayer.Play();
     }
 
     public void CollectWater(int amount)
     {
-        currWater += amount;
-
-        if (currWater > playerData.MaxWater)
+        if (currWater < playerData.MaxWater)
         {
-            currAmmo = playerData.MaxWater;
+            currWater += amount;
+            audioPlayer.clip = bubble;
+            audioPlayer.Play();
         }
     }
 

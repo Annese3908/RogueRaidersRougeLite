@@ -18,8 +18,6 @@ GameObject:
   - component: {fileID: 8185724952050483646}
   - component: {fileID: 2798887151575523889}
   - component: {fileID: 4393055447123063385}
-  - component: {fileID: 8919373752877196548}
-  - component: {fileID: 7997954145045658483}
   - component: {fileID: 6473364976434073642}
   - component: {fileID: 6633408345315688516}
   m_Layer: 0
@@ -85,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a0dffba828dc94709a053ccfda91c3d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -211,6 +209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
+  audioPlayer: {fileID: 6633408345315688516}
+  bite: {fileID: 8300000, guid: bd2999230d13ab74baba5cadc143efa9, type: 3}
+  spray: {fileID: 8300000, guid: 1857efab6fe15c441ae4aa10d35d3ac0, type: 3}
+  reload: {fileID: 8300000, guid: 4819b29c91f81624db70592717c85f68, type: 3}
+  bubble: {fileID: 8300000, guid: 0e5857baa2ab97d4a863b527e7978e8e, type: 3}
 --- !u!114 &8185724952050483646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,31 +277,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
---- !u!114 &8919373752877196548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125579836168070905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14fcd3dfca002c347add7b18d5e38702, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7997954145045658483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5125579836168070905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3421a2ba40ec64937b86f2f9d1177372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: 71dd7b6dbdc814f5284dbcd3d04e1927, type: 2}
 --- !u!95 &6473364976434073642
 Animator:
   serializedVersion: 5
@@ -331,7 +309,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1857efab6fe15c441ae4aa10d35d3ac0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

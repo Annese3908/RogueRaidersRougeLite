@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f47dff15523a7435697bff31d50c4672, type: 3}
   m_Name: Aphid Enemy
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 0.5
   maxHealth: 15
   moveSpeed: 2
