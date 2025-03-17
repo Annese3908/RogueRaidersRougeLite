@@ -26,7 +26,7 @@ public class RoomManager : MonoBehaviour
     {
         if (other.CompareTag("Player") && !roomLocked && !roomCleared)
         {
-            Debug.Log("Player has entered " + gameObject.name);
+            //Debug.Log("Player has entered " + gameObject.name);
             LockRoom();
         }
     }

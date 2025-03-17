@@ -76,7 +76,7 @@ public class SeedInventory : MonoBehaviour
 
     public PlantData GetSeeds(int packet)
     {
-        return plantData[(int)packets[packet].type];
+        return plantData[(int)packets[packet].type - 1];
     }
 
     public void Start()

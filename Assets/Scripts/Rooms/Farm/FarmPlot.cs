@@ -13,16 +13,16 @@ public class FarmPlot : InteractableObject
     [SerializeField]
     private Sprite[] prompts;
 
-    [HideInInspector]
     public PlotState state;
-    [HideInInspector]
     public PlantData plantData;
 
     public void AdvancePlot()
     {
         state++;
-        isInteractable = false;
+        interacted = false;
 
+        UpdatePromptSprite();
+        UpdateCropSprite();
     }
 
     public void PlantSeeds(PlantData plant)
@@ -42,7 +42,8 @@ public class FarmPlot : InteractableObject
             return;
 
         isInteractable = ready;
-        updatePromptSprite();
+        UpdatePromptSprite();
+        UpdateCropSprite();
     }
 
     public void UpdateCropSprite()
@@ -68,9 +69,21 @@ public class FarmPlot : InteractableObject
         }
     }
 
-    public void updatePromptSprite()
+    public void UpdatePromptSprite()
     {
+        if (state == PlotState.Harvested)
+        {
+            plotPromptSprite.enabled = false;
+            return;
+        }
+
         plotPromptSprite.enabled = isInteractable;
+
+        if (state == PlotState.Grown)
+        {
+            plotPromptSprite.sprite = plantData.CropSprite;
+            return;
+        }
 
         plotPromptSprite.sprite = prompts[(int)state];
     }
@@ -82,6 +95,6 @@ public class FarmPlot : InteractableObject
 
     private void Awake()
     {
-        updatePromptSprite();
+        UpdatePromptSprite();
     }
 }
