@@ -13,6 +13,8 @@ public class FruitTree : InteractableObject
     private SeedInventory seedPackets;
     [SerializeField]
     private PlantData data;
+    [SerializeField]
+    private AudioSource audioPlayer;
 
     public override void Interact()
     {
@@ -20,6 +22,8 @@ public class FruitTree : InteractableObject
         {
             seedPackets.CollectSeeds(data.Type);
             room.UnlockRoom();
+
+            audioPlayer.Play();
         }
     }
 
