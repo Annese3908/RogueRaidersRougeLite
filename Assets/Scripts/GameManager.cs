@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI; // Required for UI buttons
 
 public class GameManager : MonoBehaviour
 {

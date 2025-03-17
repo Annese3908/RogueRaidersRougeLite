@@ -31,9 +31,12 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         currHealth -= dmg;
-        if (currHealth <= 0){
+        if (currHealth <= 0)
+        {
+            currHealth = 0;
             Kill();
         }
+        FindObjectOfType<HeartScript>().DrawHeart();
     }
 
     public void Kill(){
@@ -42,6 +45,7 @@ public class PlayerStats : MonoBehaviour
         } else{
             // No lives left, destroy the player
             gameManager.PlayerLose();
+            FindObjectOfType<GameManager>().PlayerLose();
             Destroy(gameObject);
             Debug.Log("Game Over! No lives remaining.");
         }
