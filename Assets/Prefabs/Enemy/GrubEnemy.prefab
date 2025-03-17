@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 7dc586de5814d4b09b9e363ac32772f3, type: 2}
+  dropPrefab: {fileID: 758021287842581630, guid: d539fa1d3c4e548419e7609306ab502b, type: 3}
 --- !u!95 &3441522279891565844
 Animator:
   serializedVersion: 5

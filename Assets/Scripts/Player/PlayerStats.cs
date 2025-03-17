@@ -12,6 +12,8 @@ public class PlayerStats : MonoBehaviour
     int currLives;
     int currAmmo;
     int currWater;
+    Transform respawnPoint;
+    private GameManager gameManager;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +21,8 @@ public class PlayerStats : MonoBehaviour
         currHealth = playerData.MaxHealth;
         currLives = playerData.PlayerLives;
         currAmmo = playerData.MaxAmmo;
+        respawnPoint.position = Vector3.zero;
+        gameManager = FindObjectOfType<GameManager>();
 
         startingStatsDebug();
     }
@@ -33,8 +37,33 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void Kill(){
-        Destroy(gameObject);
+        if (currLives > 0){
+            Respawn();
+        } else{
+            // No lives left, destroy the player
+            gameManager.PlayerLose();
+            Destroy(gameObject);
+            Debug.Log("Game Over! No lives remaining.");
+        }
     }
+
+    public void Respawn()
+    {
+        // Decrease lives
+        currLives--;
+        // Reset health
+        currHealth = playerData.MaxHealth;
+        // Move the player to the respawn point
+        if (respawnPoint != null){
+            transform.position = respawnPoint.position;
+            transform.rotation = respawnPoint.rotation;
+        } else{
+            Debug.LogWarning("Respawn point not set! Respawning at original position.");
+        }
+
+        Debug.Log("Player respawned! Lives remaining: " + currLives);
+    }
+
 
     public void FullHeal()
     {
