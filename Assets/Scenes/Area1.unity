@@ -4382,6 +4382,7 @@ MonoBehaviour:
   - {fileID: 1828629327}
   - {fileID: 1950838810}
   playersSeeds: {fileID: 1844459835}
+  shot: {fileID: 2371925485791237865}
 --- !u!1 &1500146260
 GameObject:
   m_ObjectHideFlags: 0
@@ -6313,6 +6314,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4485beeff1d940bf89761e17f1e2964, type: 3}
+--- !u!114 &2371925485791237865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7215139700569448864, guid: a4485beeff1d940bf89761e17f1e2964, type: 3}
+  m_PrefabInstance: {fileID: 2371925485791237864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abbe65c218e1460e9da08eb38b5aec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7149263263936604342
 PrefabInstance:
   m_ObjectHideFlags: 0
