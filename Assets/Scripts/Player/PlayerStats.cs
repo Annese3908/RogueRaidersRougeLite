@@ -6,13 +6,13 @@ public class PlayerStats : MonoBehaviour
 {
     public Player playerData;
     // Current Stats
-    float currMoveSpeed;
-    float currHealth;
-    float currDamage;
+    public float currMoveSpeed;
+    public float currHealth;
+    public float currDamage;
     int currLives;
     int currAmmo;
     int currWater;
-    float currMaxHP;
+    public float currMaxHP;
     Transform respawnPoint;
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -41,6 +41,13 @@ public class PlayerStats : MonoBehaviour
         FindObjectOfType<HeartScript>().DrawHeart();
     }
 
+    public void IncreaseMaxHP(){
+        currMaxHP += 4;
+    }
+
+    public void ChangeSpeed(float speed){
+        currMoveSpeed = currMoveSpeed * speed;
+    }
     public void Kill(){
         if (currLives > 0){
             Respawn();
