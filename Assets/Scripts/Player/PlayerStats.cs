@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     int currLives;
     int currAmmo;
     int currWater;
+    float currMaxHP;
     Transform respawnPoint;
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class PlayerStats : MonoBehaviour
     {
         currMoveSpeed = playerData.MoveSpeed;
         currHealth = playerData.MaxHealth;
+        currMaxHP = playerData.MaxHealth;
         currLives = playerData.PlayerLives;
         currAmmo = playerData.MaxAmmo;
         respawnPoint.position = Vector3.zero;
@@ -41,6 +43,11 @@ public class PlayerStats : MonoBehaviour
         FindObjectOfType<HeartScript>().DrawHeart();
         audioPlayer.clip = bite;
         audioPlayer.Play();
+    }
+
+    public void ChangeSpeed(float scale) 
+    {
+        currMoveSpeed *= scale;
     }
 
     public void Kill(){
@@ -76,14 +83,14 @@ public class PlayerStats : MonoBehaviour
     public void FullHeal()
     {
         Debug.Log("Health is Full");
-        currHealth = playerData.MaxHealth;
+        currHealth = currMaxHP;
         audioPlayer.clip = bite;
         audioPlayer.Play();
     }
 
     public bool AtFullHealth()
     {
-        return currHealth == playerData.MaxHealth;
+        return currHealth == currMaxHP;
     }
     public int Health()
     {
@@ -96,6 +103,15 @@ public class PlayerStats : MonoBehaviour
         currAmmo = playerData.MaxAmmo;
 
         audioPlayer.clip = reload;
+        audioPlayer.Play();
+    }
+
+    public void IncreaseMaxHP()
+    {
+        currMaxHP += 1;
+        currHealth += 1;
+
+        audioPlayer.clip = bite;
         audioPlayer.Play();
     }
 

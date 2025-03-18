@@ -12,6 +12,8 @@ public class Farm : MonoBehaviour
     private FarmPlot[] plots;
     [SerializeField]
     private SeedInventory playersSeeds;
+    [SerializeField]
+    private DaggerController shot;
 
     private bool playerInFarm = true;
 
@@ -83,6 +85,7 @@ public class Farm : MonoBehaviour
                         return;
 
                     //give player upgrade
+                    GiveUpgrade(playersSeeds.GetSeeds(packetToHarvest).Type);
 
                     //advanced plot and seed packet to harvested
                     playersSeeds.AdvancePacket(packetToHarvest);
@@ -90,6 +93,22 @@ public class Farm : MonoBehaviour
                     break;
             }
             ReadyPlots();
+        }
+    }
+
+    private void GiveUpgrade(PlantType type)
+    {
+        switch(type)
+        {
+            case PlantType.GoldenApple:
+                player.IncreaseMaxHP();
+                break;
+            case PlantType.SplitPea:
+                shot.IncreaseAmount();
+                break;
+            case PlantType.SugarCane:
+                player.ChangeSpeed(1.5f);
+                break;
         }
     }
 
