@@ -19,4 +19,12 @@ public class SettingsPopup : MonoBehaviour {
         Debug.Log($"Speed: {speed}");
         Messenger<float>.Broadcast(GameEvent.SPEED_CHANGED, speed);
     }
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in Unity Editor
+        #else
+            Application.Quit(); // Quit the game when built
+        #endif
+    }
 }
