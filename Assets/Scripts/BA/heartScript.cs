@@ -42,7 +42,7 @@ public class HeartScript : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        float currentHealth = playerStats.GetHealth(); // Get float health value
+        float currentHealth = playerStats.currHealth; // Get float health value
         int maxHearts = 4; // Adjust based on UI design
 
         int fullHearts = Mathf.FloorToInt(currentHealth); // Count full hearts

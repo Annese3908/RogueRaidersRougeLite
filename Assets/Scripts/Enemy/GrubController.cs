@@ -13,22 +13,18 @@ public class GrubController : EnemyController
     private float attackSpeedMultiplier = 5f; // Speed multiplier during attack
     private bool isAttacking;
 
-    protected override void Start(){
-        base.Start();
+    protected void Start(){
         em = GetComponent<EnemyMovement>();
         am = GetComponent<Animator>();
     }
 
-    protected override void Update()
+    protected void Update()
     {
-        base.Update(); // Call base Update to handle cooldown logic
-        if (currCooldown <= 0f){
-            if (!isAttacking){
-                StartAttack();
-            } 
-            if (isAttacking){
-             MoveDuringAttack();
-            }
+        if (!isAttacking){
+            StartAttack();
+        } 
+        if (isAttacking){
+            MoveDuringAttack();
         }
     }
 
@@ -47,9 +43,8 @@ public class GrubController : EnemyController
         transform.position += (Vector3)attackDirection * enemyData.MoveSpeed * attackSpeedMultiplier * Time.deltaTime;
     }
 
-    protected override void Attack()
+    protected void Attack()
     {
-        base.Attack();
         // Reset attack state after the attack is complete
         isAttacking = false;
         am.SetBool("Attacking", false);

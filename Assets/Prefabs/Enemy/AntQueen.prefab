@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -428629120447891296, guid: 2520e7f89554545279e972774caaa722, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.266667
+      objectReference: {fileID: 0}
+    - target: {fileID: -428629120447891296, guid: 2520e7f89554545279e972774caaa722, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4.266667
+      objectReference: {fileID: 0}
     - target: {fileID: 1254321808279448652, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_Name
       value: AntQueen
@@ -24,17 +32,21 @@ PrefabInstance:
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: a48239535b72e4b0ba61f55c13aa95ee, type: 2}
+    - target: {fileID: 5983186165543124479, guid: 2520e7f89554545279e972774caaa722, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d68652fa13f4b2e48aa06f26986c074b, type: 3}
     - target: {fileID: 6133724559075960052, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5d8a93f1d78e64f89930a5a85b9b58f0, type: 2}
     - target: {fileID: 6305196517418892057, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6.8718596
       objectReference: {fileID: 0}
     - target: {fileID: 6305196517418892057, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20
+      value: 21.859297
       objectReference: {fileID: 0}
     - target: {fileID: 6305196517418892057, guid: 2520e7f89554545279e972774caaa722, type: 3}
       propertyPath: m_LocalPosition.z
