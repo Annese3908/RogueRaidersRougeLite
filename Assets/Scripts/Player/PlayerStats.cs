@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     int currLives;
     int currAmmo;
     int currWater;
+    float currMaxHP;
     Transform respawnPoint;
     private GameManager gameManager;
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     {
         currMoveSpeed = playerData.MoveSpeed;
         currHealth = playerData.MaxHealth;
+        currMaxHP = playerData.MaxHealth;
         currLives = playerData.PlayerLives;
         currAmmo = playerData.MaxAmmo;
         respawnPoint.position = Vector3.zero;
@@ -77,7 +79,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool AtFullHealth()
     {
-        return currHealth == playerData.MaxHealth;
+        return currHealth == currMaxHP;
     }
     public int Health()
     {

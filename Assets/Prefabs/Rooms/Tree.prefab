@@ -184,7 +184,7 @@ MonoBehaviour:
   room: {fileID: 0}
   seedPackets: {fileID: 0}
   data: {fileID: 11400000, guid: 17e01dad077b6c1408aa56fc2d73ee22, type: 2}
-  audio: {fileID: 7040763908523183949}
+  audioPlayer: {fileID: 7040763908523183949}
 --- !u!61 &1673946389548795198
 BoxCollider2D:
   m_ObjectHideFlags: 0

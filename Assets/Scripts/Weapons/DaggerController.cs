@@ -16,6 +16,11 @@ public class DaggerController : WeaponController
      projAmnt = weaponData.ProjectileAmnt;
     }
 
+    public void IncreaseAmount()
+    {
+        projAmnt += 1;
+    }
+
     // Update is called once per frame
     protected override void Attack()
     {
